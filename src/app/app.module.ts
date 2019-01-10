@@ -1,32 +1,59 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import {MatToolbarModule, MatButtonModule, MatInputModule, MatFormFieldModule} from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
+import { 
+  MatToolbarModule, 
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule
+} from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './service/auth.service';
+import { AlertComponent } from './alert/alert.component';
 
-@NgModule({
+
+const routes = [
+  
+  
+  { path: 'register', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+ 
+ 
+]
+  @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
     HeaderComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    AlertComponent,
+   
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,    
+    BrowserAnimationsModule,
     FormsModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     MatToolbarModule,
-    MatButtonModule, 
+    MatButtonModule,
     MatFormFieldModule,
     MatInputModule
   ],
-  providers: [],
+  providers:[
+    AuthService
+  ],
+ 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
