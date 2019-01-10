@@ -15,10 +15,10 @@ import {
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { LoginComponent } from '../app/components/login/login.component';
 import { RegistrationComponent } from '../app/components/registration/registration.component';
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
+import { LoginComponent } from '../app/components/login/login.component';
 
 
 const routes = [
@@ -28,14 +28,15 @@ const routes = [
   { path: 'login', component: LoginComponent },
  
  
+ 
 ]
   @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HeaderComponent,
     RegistrationComponent,
     AlertComponent,
+    LoginComponent,
 
    
   ],
