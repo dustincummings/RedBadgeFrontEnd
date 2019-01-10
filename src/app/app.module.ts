@@ -15,9 +15,9 @@ import {
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './components/registration/registration.component';
-import { AuthService } from './service/auth.service';
+import { LoginComponent } from '../app/components/login/login.component';
+import { RegistrationComponent } from '../app/components/registration/registration.component';
+import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 
 
@@ -36,6 +36,7 @@ const routes = [
     HeaderComponent,
     RegistrationComponent,
     AlertComponent,
+
    
   ],
   imports: [

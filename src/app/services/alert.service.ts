@@ -6,7 +6,6 @@ import { Observable, Subject } from 'rxjs';
 export class AlertService {
     private subject = new Subject<any>();
     private keepAfterNavigationChange = false;
-
     constructor(private router: Router) {
 
         router.events.subscribe(event => {

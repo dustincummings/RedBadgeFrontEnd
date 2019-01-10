@@ -52,7 +52,7 @@ export class ServicesService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<any>('https://efa-gardenapp-backend.herokuapp.com/api/auth/login', { email: email, password: password })
+    return this.http.post<any>('http://localhost:4200/login', { email: email, password: password })
       .pipe(map(user => {
         if (user) {
           localStorage.setItem('token', JSON.stringify(user.token));
