@@ -1,0 +1,32 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary">Create New</a>
+<hr>
+
+<div>
+  <table mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+ 
+    <!-- <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let food"><i class="material-icons">library_books</i></mat-cell>
+    </ng-container> -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef >Name</mat-header-cell>
+      <mat-cell *matCellDef="let food">{{food.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Description">
+       <mat-header-cell *matHeaderCellDef >Description</mat-header-cell>
+       <mat-cell *matCellDef="let food">{{food.foodID}}</mat-cell>
+    </ng-container>
+    <!-- <ng-container matColumnDef="Ingredients">
+       <mat-header-cell *matHeaderCellDef >Ingredients</mat-header-cell>
+       <mat-cell *matCellDef="let food">{{food.Ingredients}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Allergen">
+       <mat-header-cell *matHeaderCellDef >Allergen</mat-header-cell>
+       <mat-cell *matCellDef="let food">{{food.Allergen}}</mat-cell>
+    </ng-container> -->
+ 
+  </table>
+</div>
