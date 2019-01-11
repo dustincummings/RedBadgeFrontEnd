@@ -10,7 +10,8 @@ import {
   MatToolbarModule, 
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -19,16 +20,16 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
-
+import { CustomerComponent } from '../app/components/customer/customer.component';
+import { CustomerService } from './services/customer.service';
+import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
 
 const routes = [
-  
-  
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
- 
- 
- 
+  { path: 'customers', component: CustomerIndexComponent },
+  { path: '**', component: RegistrationComponent },
+
 ]
   @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
+    CustomerComponent,
+    CustomerIndexComponent,
 
    
   ],
@@ -50,10 +53,12 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule
   ],
   providers:[
-    AuthService
+    AuthService,
+    CustomerService
   ],
  
   bootstrap: [AppComponent]
