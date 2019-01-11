@@ -10,7 +10,8 @@ import {
   MatToolbarModule, 
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -19,14 +20,18 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
-
+import { FoodComponent } from './components/food/food.component';
+import { FoodsService } from './services/foods.service';
+import { FoodIndexComponent } from './components/food/food-index/food-index.component';
 
 const routes = [
   
   
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
- 
+  {path: 'foods', component: FoodIndexComponent},
+
+  
  
  
 ]
@@ -37,6 +42,8 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
+    FoodComponent,
+    FoodIndexComponent,
 
    
   ],
@@ -50,10 +57,12 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule, 
+    MatTableModule
   ],
   providers:[
-    AuthService
+    AuthService, 
+    FoodsService
   ],
  
   bootstrap: [AppComponent]
