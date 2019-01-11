@@ -20,21 +20,21 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { CustomerComponent } from '../app/components/customer/customer.component';
+import { CustomerService } from './services/customer.service';
+import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
 import { FoodComponent } from './components/food/food.component';
 import { FoodsService } from './services/foods.service';
 import { FoodIndexComponent } from './components/food/food-index/food-index.component';
 
 const routes = [
-  
-  
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'customers', component: CustomerIndexComponent },
+  { path: '**', component: RegistrationComponent },
   {path: 'foods', component: FoodIndexComponent},
-
-  
- 
- 
 ]
+
   @NgModule({
   declarations: [
     AppComponent,
@@ -42,10 +42,10 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
+    CustomerComponent,
+    CustomerIndexComponent,
     FoodComponent,
     FoodIndexComponent,
-
-   
   ],
   imports: [
     BrowserModule,
@@ -57,13 +57,17 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule, 
+    MatInputModule,
     MatTableModule
   ],
   providers:[
-    AuthService, 
-    FoodsService
+    AuthService,
+    CustomerService,
+    
+    MatInputModule, 
+    MatTableModule
   ],
+ 
  
   bootstrap: [AppComponent]
 })
