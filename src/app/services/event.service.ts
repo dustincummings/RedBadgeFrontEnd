@@ -12,7 +12,7 @@ export class EventService {
   constructor(private _http:HttpClient) { }
 
   getEvents(){
-    return this._http.get(`${ApiUrl}/api/Food`, {headers: this.getHeaders()});
+    return this._http.get(`${ApiUrl}/api/Event`, {headers: this.getHeaders()});
   }
 
   private getHeaders(){
