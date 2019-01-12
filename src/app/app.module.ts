@@ -28,13 +28,15 @@ import { CustomerIndexComponent } from './components/customer/customer-index/cus
 import { CustomerService } from './services/customer.service';
 import { CustomerComponent } from './components/customer/customer.component';
 import { FoodCreateComponent } from './components/food/food-create/food-create.component';
+import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   {path: 'foods', children:[
     {path: '',component: FoodIndexComponent},
-    {path:'create', component: FoodCreateComponent}
+    {path:'create', component: FoodCreateComponent},
+    {path: 'detail/:id', component: FoodDetailComponent}
   ]},
   { path: 'customers', component: CustomerIndexComponent },
  
@@ -51,6 +53,7 @@ const routes = [
     CustomerIndexComponent,
     CustomerComponent,
     FoodCreateComponent,
+    FoodDetailComponent,
   ],
   imports: [
     BrowserModule,

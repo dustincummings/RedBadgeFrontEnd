@@ -22,5 +22,8 @@ export class FoodsService {
   createFood(food: Food){
     return this._http.post(`${ApiUrl}/api/Food`,food, { headers: this.getHeaders()});
   }
+  getFood(id: string){
+    return this._http.get(`${ApiUrl}/api/Food/${id}`, { headers: this.getHeaders()});
+  }
 
 }
