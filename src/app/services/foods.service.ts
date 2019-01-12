@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders } from '@angular/common/http';
+import { Food } from '../models/Food'
 
 const ApiUrl = "https://localhost:44311";
 
@@ -17,6 +18,9 @@ export class FoodsService {
 
   private getHeaders(){
     return new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('id_token')}`);
+  }
+  createFood(food: Food){
+    return this._http.post(`${ApiUrl}/api/Food`,food, { headers: this.getHeaders()});
   }
 
 }

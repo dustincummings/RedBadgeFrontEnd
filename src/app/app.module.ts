@@ -27,11 +27,15 @@ import { FoodIndexComponent } from './components/food/food-index/food-index.comp
 import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
 import { CustomerService } from './services/customer.service';
 import { CustomerComponent } from './components/customer/customer.component';
+import { FoodCreateComponent } from './components/food/food-create/food-create.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'foods', component: FoodIndexComponent},
+  {path: 'foods', children:[
+    {path: '',component: FoodIndexComponent},
+    {path:'create', component: FoodCreateComponent}
+  ]},
   { path: 'customers', component: CustomerIndexComponent },
  
 ]
@@ -46,6 +50,7 @@ const routes = [
     FoodIndexComponent,
     CustomerIndexComponent,
     CustomerComponent,
+    FoodCreateComponent,
   ],
   imports: [
     BrowserModule,
