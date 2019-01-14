@@ -27,22 +27,22 @@ export class FoodEditComponent implements OnInit {
   }
   createForm() {
     this.editFoodForm = this._form.group({
-      FoodID: new FormControl(this.food.FoodID),
-      OwnerID: new FormControl(this.food.OwnerID),
-      Name: new FormControl(this.food.Name),
-      Description: new FormControl(this.food.Description),
-      Ingredient: new FormControl(this.food.Ingredient),
-      Allergen: new FormControl(this.food.Allergen),   
+      FoodID: new FormControl(this.food.foodID),
+      OwnerID: new FormControl(this.food.ownerID),
+      Name: new FormControl(this.food.name),
+      Description: new FormControl(this.food.description),
+      Ingredient: new FormControl(this.food.ingredient),
+      Allergen: new FormControl(this.food.allergen),   
     });
   }
   onSubmit(form){
     const updateFood: Food ={
-      FoodID: form.value.FoodID,
-      OwnerID: form.value.OwnerID,
-      Name: form.value.Name,
-      Description: form.value.Description,
-      Ingredient: form.value.Ingredient,
-      Allergen: form.value.Allergen,
+      foodID: form.value.FoodID,
+      ownerID: form.value.OwnerID,
+      name: form.value.Name,
+      description: form.value.Description,
+      ingredient: form.value.Ingredient,
+      allergen: form.value.Allergen,
     };
     this._foodService.updateFood(updateFood).subscribe(d =>{
       this._router.navigate(['/foods']);
