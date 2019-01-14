@@ -9,12 +9,12 @@
       
       <ng-container matColumnDef="details">
         <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let event" routerLink="/events/detail/{{event.eventEntityId}}"><i class="material-icons">library_books</i></mat-cell>
+        <mat-cell *matCellDef="let event" routerLink="/events/details/{{event.eventEntityID}}"><i class="material-icons">library_books</i></mat-cell>
       </ng-container>
 
-     <ng-container matColumnDef="EventEntityId">
+     <ng-container matColumnDef="EventEntityID">
         <mat-header-cell *matHeaderCellDef mat-sort-header>ID #</mat-header-cell>
-        <mat-cell *matCellDef="let event">{{event.eventEntityId}}</mat-cell>
+        <mat-cell *matCellDef="let event">{{event.eventEntityID}}</mat-cell>
       </ng-container> -->
 
       <ng-container matColumnDef="Location">
@@ -26,7 +26,7 @@
           <mat-header-cell *matHeaderCellDef ></mat-header-cell>
           <mat-cell *matCellDef="let event">
             <button mat-button color="accent" routerLink="/events/edit/{{event.eventEntityId}}">Edit</button>
-            <i class="material-icons" routerLink="/event/delete/{{event.eventEntityId}}">delete</i>
+            <i class="material-icons" routerLink="/events/delete/{{event.eventEntityID}}">delete</i>
           </mat-cell>
         </ng-container>
       

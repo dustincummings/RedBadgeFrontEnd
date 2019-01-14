@@ -26,26 +26,26 @@ export class EventEditComponent implements OnInit {
   }
   createForm() {
     this.editEventForm = this._form.group({
-      EventEntityID: new FormControl(this.event.EventEntityId),
-      OwnerID: new FormControl(this.event.OwnerId),
-      Location: new FormControl(this.event.Location),
-      NumberOfPeople: new FormControl(this.event.NumberOfPeople),
-      FoodId: new FormControl(this.event.FoodId),
-      AdditionalNotes: new FormControl(this.event.AdditionalNotes),
-      DateTime: new FormControl(this.event.DateTime),   
-      CustId: new FormControl(this.event.CustId), 
+      EventEntityID: new FormControl(this.event.eventEntityId),
+      OwnerID: new FormControl(this.event.ownerID),
+      Location: new FormControl(this.event.location),
+      NumberOfPeople: new FormControl(this.event.numberOfPeople),
+      FoodId: new FormControl(this.event.foodID),
+      AdditionalNotes: new FormControl(this.event.additionalNotes),
+      DateOfEvent: new FormControl(this.event.dateofEvent),   
+      CustId: new FormControl(this.event.custID), 
     });
   }
   onSubmit(form){
     const updateEvent: Event ={
-      EventEntityId: form.value.EventEntityId,
-      OwnerId: form.value.OwnerID,
-      Location: form.value.Location,
-      NumberOfPeople: form.value.NumberOfPeople,
-      FoodId: form.value.FoodId,
-      AdditionalNotes: form.value.AdditionalNotes,
-      DateTime: form.value.DateTime,
-      CustId: form.value.CustId,
+      eventEntityId: form.value.EventEntityID,
+      ownerID: form.value.OwnerID,
+      location: form.value.Location,
+      numberOfPeople: form.value.NumberOfPeople,
+      foodID: form.value.FoodId,
+      additionalNotes: form.value.AdditionalNotes,
+      dateofEvent: form.value.DateOfEvent,
+      custID: form.value.CustID,
     };
     this._eventService.updateEvent(updateEvent).subscribe(d =>{
       this._router.navigate(['/events']);
