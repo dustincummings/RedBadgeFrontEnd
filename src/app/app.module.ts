@@ -24,12 +24,18 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { EventComponent } from './components/event/event.component';
 import { EventService } from '../app/services/event.service';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { EventCreateComponent } from './components/event/event-create/event-create.component';
+import { EventDetailsComponent } from './components/event/event-details/event-details.component';
+import { EventEditComponent } from './components/event/event-edit/event-edit.component';
+import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   {path: 'events', children:[
     {path: '',component: EventIndexComponent},
+    {path: 'create',component: EventCreateComponent},
+    {path: 'details/;id',component: EventDetailsComponent}
   ]},
 ]
   @NgModule({
@@ -41,6 +47,10 @@ const routes = [
     LoginComponent,
     EventComponent,
     EventIndexComponent,
+    EventCreateComponent,
+    EventDetailsComponent,
+    EventEditComponent,
+    EventDeleteComponent,
     
   ],
   imports: [

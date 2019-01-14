@@ -3,6 +3,7 @@ export interface Event {
     OwnerId?: number;
     Location: string;
     NumberOfPeople: number;
-    AdditionalNotes:string;
     Food:string;
+    AdditionalNotes:string;
+  
 }
