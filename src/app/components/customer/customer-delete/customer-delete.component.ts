@@ -23,7 +23,7 @@ export class CustomerDeleteComponent implements OnInit {
   }
   
   onDelete() {
-    this._customerService.deleteCustomer(this.customer.CustID).subscribe(() => {
+    this._customerService.deleteCustomer(this.customer.custID).subscribe(() => {
       this._router.navigate(['/customers']);
     });
   }

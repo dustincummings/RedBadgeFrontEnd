@@ -21,12 +21,12 @@ export class CustomerCreateComponent implements OnInit {
 
   createForm() {
     this.customerForm = this._form.group({
-      CustFirstName: new FormControl,
-      CustLastName: new FormControl,
-      CustEmail: new FormControl,
-      CustPhone: new FormControl,
-      CustAddress: new FormControl,
-      CustCityStZip: new FormControl,
+      custFirstName: new FormControl,
+      custLastName: new FormControl,
+      custEmail: new FormControl,
+      custPhone: new FormControl,
+      custAddress: new FormControl,
+      custCityStZip: new FormControl,
     })
   }
 

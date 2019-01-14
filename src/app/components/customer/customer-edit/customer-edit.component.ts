@@ -33,25 +33,25 @@ export class CustomerEditComponent implements OnInit {
 
   createForm() {
     this.editCustomerForm = this._form.group({
-      CustID: new FormControl(this.customer.CustID),
-      CustFirstName: new FormControl(this.customer.CustFirstName),
-      CustLastName: new FormControl(this.customer.CustLastName),
-      CustEmail: new FormControl(this.customer.CustEmail),
-      CustPhone: new FormControl(this.customer.CustPhone),
-      CustAddress: new FormControl(this.customer.CustAddress),
-      CustCityStZip: new FormControl(this.customer.CustCityStZip)
+      CustID: new FormControl(this.customer.custID),
+      CustFirstName: new FormControl(this.customer.custFirstName),
+      CustLastName: new FormControl(this.customer.custLastName),
+      CustEmail: new FormControl(this.customer.custEmail),
+      CustPhone: new FormControl(this.customer.custPhone),
+      CustAddress: new FormControl(this.customer.custAddress),
+      CustCityStZip: new FormControl(this.customer.custCityStZip)
     });
   }
 
   onSubmit(form) {
     const updateCustomer: Customer = {
-      CustID: form.value.CustID,
-      CustFirstName: form.value.CustFirstName,
-      CustLastName: form.value.CustLastName,
-      CustEmail: form.value.CustEmail,
-      CustPhone: form.value.CustPhone,
-      CustAddress: form.value.CustAddress,
-      CustCityStZip: form.value.CustCityStZip
+      custID: form.value.custID,
+      custFirstName: form.value.custFirstName,
+      custLastName: form.value.custLastName,
+      custEmail: form.value.custEmail,
+      custPhone: form.value.cCustPhone,
+      custAddress: form.value.custAddress,
+      custCityStZip: form.value.custCityStZip
     };
     this._customerService.updateCustomer(updateCustomer).subscribe(d => {
       this._router.navigate(['/customers']);

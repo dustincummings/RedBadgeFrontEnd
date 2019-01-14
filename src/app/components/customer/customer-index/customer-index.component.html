@@ -8,28 +8,29 @@
       <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
       <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
-        <ng-container matColumnDef="CustFirstName">
+        <ng-container matColumnDef="custFirstName">
             <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
             <mat-cell *matCellDef="let customer">{{customer.custFirstName}}</mat-cell>
         </ng-container>
-        <ng-container matColumnDef="CustLastName">
+        <ng-container matColumnDef="custLastName">
             <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
             <mat-cell *matCellDef="let customer">{{customer.custLastName}}</mat-cell>
         </ng-container>
         
-        <ng-container matColumnDef="details">
+        <!-- <ng-container matColumnDef="details">
             <mat-header-cell *matHeaderCellDef class="matColumnSize"> </mat-header-cell>
             <mat-cell *matCellDef="let customer" routerLink="/customers/detail/{{customer.custID}}">
                 <button mat-button color="accent">Details</button>
-                <!-- <i class="material-icons">library_books</i> -->
             </mat-cell>
-        </ng-container>
-
+        </ng-container> -->
+        
         <ng-container matColumnDef="buttons">
             <mat-header-cell *matHeaderCellDef> </mat-header-cell>
             <mat-cell *matCellDef="let customer">
+                
+                <i class="material-icons" routerLink="/customers/detail/{{customer.custID}}">library_books</i>
                 <i mat-icon class="material-icons" routerLink="/customers/edit/{{customer.custID}}">edit</i>
-                <i class="material-icons" routerLink="/customers/edit/{{customer.custID}}">delete</i>
+                <i class="material-icons" routerLink="/customers/delete/{{customer.custID}}">delete</i>
             </mat-cell>
         </ng-container>
     </mat-table>
