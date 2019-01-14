@@ -27,6 +27,12 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
+import { CustomerComponent } from './components/customer/customer.component';
+import { FoodCreateComponent } from './components/food/food-create/food-create.component';
+import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
+import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
+import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
+import { CommonModule } from '@angular/common';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -41,7 +47,14 @@ const routes = [
     ]
   },
   { path: '**', component: RegistrationComponent },
-
+  {path: 'foods', children:[
+    {path: '',component: FoodIndexComponent},
+    {path:'create', component: FoodCreateComponent},
+    {path: 'detail/:id', component: FoodDetailComponent},
+    {path: 'edit/:id', component: FoodEditComponent},
+    {path: 'delete/:id', component: FoodDeleteComponent}
+  ]},
+  { path: 'customers', component: CustomerIndexComponent },
 ]
 
   @NgModule({
@@ -57,6 +70,10 @@ const routes = [
     CustomerDetailComponent,
     CustomerEditComponent,
     CustomerDeleteComponent,
+    FoodCreateComponent,
+    FoodDetailComponent,
+    FoodEditComponent,
+    FoodDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -70,6 +87,10 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule
+    MatInputModule, 
+    MatTableModule, 
+    MatSortModule,
+    CommonModule
   ],
   providers:[
     AuthService,

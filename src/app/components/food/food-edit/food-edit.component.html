@@ -1,0 +1,42 @@
+<h1>Edit a Food.</h1>
+<hr>
+
+<div *ngIf="food">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editFoodForm">
+    <div>
+        <div hidden>
+            <mat-form-field>
+            <input matInput placeholder="FoodID" formControlName="FoodID" type="FoodID" required [value]="food.foodID"/>
+          </mat-form-field>
+        </div>
+        <div hidden>
+            <mat-form-field>
+            <input matInput placeholder="OwnerID" formControlName="OwnerID" type="OwnerID" required [value]="food.ownerID"/>
+          </mat-form-field>
+        </div>
+      <div>
+        <mat-form-field>
+        <input matInput placeholder="Name" formControlName="Name" type="Name" required [value]="food.name"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="Description" type="Description" required [value]="food.description"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Ingredient" formControlName="Ingredient" type="Ingredient" required [value]="food.ingredient"/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Allergen" formControlName="Allergen" type="Allergen" required [value]="food.allergen"/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+</form>
+</div>
+
+<a mat-button routerLink="/foods">Back to List</a>

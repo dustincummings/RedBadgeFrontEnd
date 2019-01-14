@@ -1,10 +1,10 @@
 export interface Food{
-    FoodID?: number;
-    OwnerID?: number;
-    Name: string;
-    Ingredient: string;
-    Description: string;
-    Allergen: string
+    foodID?: number;
+    ownerID?: number;
+    name: string;
+    ingredient: string;
+    description: string;
+    allergen: string
 
     
 } 
