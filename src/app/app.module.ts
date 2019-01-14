@@ -11,7 +11,8 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatSortModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -27,7 +28,9 @@ import { CustomerCreateComponent } from './components/customer/customer-create/c
 import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
 import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
 import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
-import { CustomerComponent } from './components/customer/customer.component';
+import { FoodComponent } from './components/food/food.component';
+import { FoodsService } from './services/foods.service';
+import { FoodIndexComponent } from './components/food/food-index/food-index.component';
 import { FoodCreateComponent } from './components/food/food-create/food-create.component';
 import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
 import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
@@ -46,7 +49,6 @@ const routes = [
       { path:'delete/:id', component: CustomerDeleteComponent },
     ]
   },
-  { path: '**', component: RegistrationComponent },
   {path: 'foods', children:[
     {path: '',component: FoodIndexComponent},
     {path:'create', component: FoodCreateComponent},
@@ -54,7 +56,7 @@ const routes = [
     {path: 'edit/:id', component: FoodEditComponent},
     {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
-  { path: 'customers', component: CustomerIndexComponent },
+  { path: '**', component: RegistrationComponent },
 ]
 
   @NgModule({
@@ -70,10 +72,12 @@ const routes = [
     CustomerDetailComponent,
     CustomerEditComponent,
     CustomerDeleteComponent,
+    FoodComponent,
     FoodCreateComponent,
     FoodDetailComponent,
     FoodEditComponent,
     FoodDeleteComponent,
+    FoodIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -86,15 +90,14 @@ const routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatTableModule
-    MatInputModule, 
-    MatTableModule, 
+    MatTableModule,
     MatSortModule,
     CommonModule
   ],
   providers:[
     AuthService,
-    CustomerService
+    CustomerService,
+    FoodsService
   ],
  
   bootstrap: [AppComponent]
