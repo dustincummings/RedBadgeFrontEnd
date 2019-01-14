@@ -5,7 +5,7 @@ export interface Event {
     numberOfPeople: number;
     foodID:number;
     additionalNotes:string;
-    // DateofEvent?: Date ;
+    dateofEvent?: Date ;
     custID?: number;
   
 }
