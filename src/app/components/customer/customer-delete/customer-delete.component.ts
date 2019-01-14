@@ -12,17 +12,19 @@ export class CustomerDeleteComponent implements OnInit {
 
   customer: Customer;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _customerService: CustomerService, private _router: Router) { }
-
-  ngOnInit() {
-    this._activatedRoute.paramMap.subscribe(routeData => {
-      this._customerService.getCustomer(routeData.get('id')).subscribe((singleCustomer: Customer) => {
-        this.customer = singleCustomer;
+  constructor(private _activatedRoute: ActivatedRoute, private _customerService: CustomerService, private _router: Router) { 
+  this._activatedRoute.paramMap.subscribe(p => {
+    this._customerService.getCustomer(p.get('id')).subscribe((singleCustomer: Customer) => {
+      this.customer = singleCustomer;
       });
     });
   }
+
+  ngOnInit() {
+  }
   
   onDelete() {
+    console.log(this.customer.custID)
     this._customerService.deleteCustomer(this.customer.custID).subscribe(() => {
       this._router.navigate(['/customers']);
     });
