@@ -31,6 +31,7 @@ import { FoodCreateComponent } from './components/food/food-create/food-create.c
 import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
 import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
 import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
+import { CommonModule } from '@angular/common';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -73,7 +74,8 @@ const routes = [
     MatFormFieldModule,
     MatInputModule, 
     MatTableModule, 
-    MatSortModule
+    MatSortModule,
+    CommonModule
   ],
   providers:[
     AuthService, 

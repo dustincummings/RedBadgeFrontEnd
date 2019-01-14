@@ -9,7 +9,8 @@ import { Food } from 'src/app/models/Food';
   styleUrls: ['./food-detail.component.css']
 })
 export class FoodDetailComponent implements OnInit {
-  food :Food;
+  food: Food;
+
 
   constructor(private _activatedRoute: ActivatedRoute, private _foodService: FoodsService) { }
 
