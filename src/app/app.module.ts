@@ -29,6 +29,8 @@ import { CustomerService } from './services/customer.service';
 import { CustomerComponent } from './components/customer/customer.component';
 import { FoodCreateComponent } from './components/food/food-create/food-create.component';
 import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
+import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
+import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
@@ -36,7 +38,9 @@ const routes = [
   {path: 'foods', children:[
     {path: '',component: FoodIndexComponent},
     {path:'create', component: FoodCreateComponent},
-    {path: 'detail/:id', component: FoodDetailComponent}
+    {path: 'detail/:id', component: FoodDetailComponent},
+    {path: 'edit/:id', component: FoodEditComponent},
+    {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
   { path: 'customers', component: CustomerIndexComponent },
  
@@ -54,6 +58,8 @@ const routes = [
     CustomerComponent,
     FoodCreateComponent,
     FoodDetailComponent,
+    FoodEditComponent,
+    FoodDeleteComponent,
   ],
   imports: [
     BrowserModule,

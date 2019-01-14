@@ -32,6 +32,4 @@ export class FoodCreateComponent implements OnInit {
       this._router.navigate(['/foods']);
     });
   }
-  
-
 }

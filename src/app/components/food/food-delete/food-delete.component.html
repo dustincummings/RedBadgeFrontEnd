@@ -1,6 +1,3 @@
-<h1>Details</h1>
-<hr>
-
 <div *ngIf="food">
     <div>
         <label for="">Id #: </label>
@@ -23,5 +20,5 @@
     <span>{{food.allergen}}</span>
   </div>
 </div>
-<button mat-button color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
+<button mat-button color="warn" (click)="onDelete()">Delete</button>
 <button mat-button color="primary" routerLink="/foods">Back to List</button>
