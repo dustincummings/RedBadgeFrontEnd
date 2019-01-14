@@ -1,0 +1,43 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary">Create New</a>
+<hr>
+
+<div *ngIf="dataSource">
+  <mat-table #table [dataSource]="dataSource">
+      <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+      <ng-container matColumnDef="CustLastName">
+            <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custLastName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CustFirstName">
+            <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custFirstName}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CustEmail">
+            <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custEmail}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CustPhone">
+            <mat-header-cell *matHeaderCellDef>Phone No.</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custPhone}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CustAddress">
+            <mat-header-cell *matHeaderCellDef>Street Address</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custAddress}}</mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="CustCityStZip">
+            <mat-header-cell *matHeaderCellDef>City State Zip</mat-header-cell>
+            <mat-cell *matCellDef="let customer">{{customer.custCityStZip}}</mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let Note">
+                <i mat-icon class="material-icons">edit</i>
+                <i class="material-icons">delete</i>
+            </mat-cell>
+        </ng-container>
+    </mat-table>
+  </div>
+        

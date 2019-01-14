@@ -1,0 +1,31 @@
+<h1>Index</h1>
+<a mat-raised-button color="primary" routerLink="/foods/create">Create New</a>
+<hr>
+
+<div class="food-container mat-elevation-z8">
+  <mat-table  #table [dataSource]="dataSource" matSort>
+      <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+    
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let food" routerLink="/foods/detail/{{food.foodID}}"><i class="material-icons">library_books</i></mat-cell>
+    </ng-container>
+    <!-- <ng-container matColumnDef="foodID">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>ID #</mat-header-cell>
+      <mat-cell *matCellDef="let food">{{food.foodID}}</mat-cell>
+    </ng-container> -->
+    <ng-container matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
+      <mat-cell *matCellDef="let food">{{food.name}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="buttons">
+        <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+        <mat-cell *matCellDef="let food">
+          <button mat-button color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
+          <i class="material-icons" routerLink="/foods/delete/{{food.foodID}}">delete</i>
+        </mat-cell>
+      </ng-container>
+    
+  </mat-table>
+</div>
