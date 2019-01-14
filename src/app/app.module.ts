@@ -21,6 +21,15 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+
+import { EventComponent } from './components/event/event.component';
+import { EventService } from '../app/services/event.service';
+import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { EventCreateComponent } from './components/event/event-create/event-create.component';
+import { EventDetailsComponent } from './components/event/event-details/event-details.component';
+import { EventEditComponent } from './components/event/event-edit/event-edit.component';
+import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
+
 import { CustomerComponent } from '../app/components/customer/customer.component';
 import { CustomerService } from './services/customer.service';
 import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
@@ -37,9 +46,21 @@ import { FoodEditComponent } from './components/food/food-edit/food-edit.compone
 import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
 import { CommonModule } from '@angular/common';
 
+
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+
+  {path: 'events', children:[
+    {path: '',component: EventIndexComponent},
+    {path: 'create',component: EventCreateComponent},
+    {path: 'details/;id',component: EventDetailsComponent},
+    {path: 'edit/;id',component: EventEditComponent},
+    {path: 'delete/;id',component: EventDeleteComponent}
+    
+
+  ]},
+
   { 
     path: 'customers', children: [
       { path:'', component: CustomerIndexComponent },
@@ -57,6 +78,7 @@ const routes = [
     {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
   { path: '**', component: RegistrationComponent },
+
 ]
 
   @NgModule({
@@ -66,6 +88,15 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
+
+    EventComponent,
+    EventIndexComponent,
+    EventCreateComponent,
+    EventDetailsComponent,
+    EventEditComponent,
+    EventDeleteComponent,
+    
+
     CustomerComponent,
     CustomerIndexComponent,
     CustomerCreateComponent,
@@ -78,6 +109,7 @@ const routes = [
     FoodEditComponent,
     FoodDeleteComponent,
     FoodIndexComponent
+
   ],
   imports: [
     BrowserModule,
@@ -89,15 +121,17 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
-    MatSortModule,
-    CommonModule
+
+    MatInputModule, 
+    MatTableModule, 
+    MatSortModule
   ],
+  
   providers:[
     AuthService,
     CustomerService,
-    FoodsService
+    FoodsService,
+    EventService
   ],
  
   bootstrap: [AppComponent]
