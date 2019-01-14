@@ -1,0 +1,40 @@
+<h1>Create Customer</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="customerForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="CustFirstName" type="CustFirstName" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="CustLastName" type="CustLastName" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="CustEmail" type="CustEmail" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Phone" formControlName="CustPhone" type="CustPhone" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Street Address" formControlName="CustAddress" type="CustAddress" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="City St Zip" formControlName="CustCityStZip" type="CustCityStZip" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Customer</button>
+</form>
+
+<a mat-button routerLink="/customers">Back to List</a>
