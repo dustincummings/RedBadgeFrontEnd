@@ -33,13 +33,13 @@ export class CustomerEditComponent implements OnInit {
 
   createForm() {
     this.editCustomerForm = this._form.group({
-      CustID: new FormControl(this.customer.custID),
-      CustFirstName: new FormControl(this.customer.custFirstName),
-      CustLastName: new FormControl(this.customer.custLastName),
-      CustEmail: new FormControl(this.customer.custEmail),
-      CustPhone: new FormControl(this.customer.custPhone),
-      CustAddress: new FormControl(this.customer.custAddress),
-      CustCityStZip: new FormControl(this.customer.custCityStZip)
+      custID: new FormControl(this.customer.custID),
+      custFirstName: new FormControl(this.customer.custFirstName),
+      custLastName: new FormControl(this.customer.custLastName),
+      custEmail: new FormControl(this.customer.custEmail),
+      custPhone: new FormControl(this.customer.custPhone),
+      custAddress: new FormControl(this.customer.custAddress),
+      custCityStZip: new FormControl(this.customer.custCityStZip)
     });
   }
 
@@ -49,7 +49,7 @@ export class CustomerEditComponent implements OnInit {
       custFirstName: form.value.custFirstName,
       custLastName: form.value.custLastName,
       custEmail: form.value.custEmail,
-      custPhone: form.value.cCustPhone,
+      custPhone: form.value.custPhone,
       custAddress: form.value.custAddress,
       custCityStZip: form.value.custCityStZip
     };
