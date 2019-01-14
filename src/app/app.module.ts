@@ -45,7 +45,7 @@ const routes = [
       { path:'', component: CustomerIndexComponent },
       { path:'create', component: CustomerCreateComponent },
       { path:'detail/:id', component: CustomerDetailComponent },
-      { path:'update/:id', component: CustomerEditComponent },
+      { path:'edit/:id', component: CustomerEditComponent },
       { path:'delete/:id', component: CustomerDeleteComponent },
     ]
   },
