@@ -21,10 +21,10 @@ export class EventCreateComponent implements OnInit {
     this.eventForm = this._form.group({
       Location: new FormControl,
       NumberOfPeople: new FormControl,
-      FoodId: new FormControl,
+      FoodID: new FormControl,
       AdditionalNotes: new FormControl,
-      DateTime: new FormControl,
-      CustId: new FormControl
+      // DateOfEvent: new FormControl,
+      CustID: new FormControl
     });
   }
 

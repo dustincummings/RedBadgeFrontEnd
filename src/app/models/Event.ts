@@ -1,11 +1,11 @@
 export interface Event {
-    EventEntityId?: number;
-    OwnerId?: number;
-    Location: string;
-    NumberOfPeople: number;
-    FoodId:number;
-    AdditionalNotes:string;
-    DateTime?: string;
-    CustId?: number;
+    eventEntityId?: number;
+    ownerID?: number;
+    location: string;
+    numberOfPeople: number;
+    foodID:number;
+    additionalNotes:string;
+    // DateofEvent?: Date ;
+    custID?: number;
   
 }
