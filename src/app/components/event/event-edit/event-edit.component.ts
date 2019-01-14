@@ -36,15 +36,15 @@ export class EventEditComponent implements OnInit {
   }
   onSubmit(form){
     const updateEvent: Event ={
-      foodID: form.value.FoodID,
-      ownerID: form.value.OwnerID,
-      name: form.value.Name,
-      description: form.value.Description,
-      ingredient: form.value.Ingredient,
-      allergen: form.value.Allergen,
+      EventEntityId: form.value.EventEntityId,
+      OwnerId: form.value.OwnerID,
+      Location: form.value.Location,
+      NumberOfPeople: form.value.NumberOfPeople,
+      Food: form.value.Food,
+      AdditionalNotes: form.value.AdditionalNotes,
     };
-    this._foodService.updateFood(updateFood).subscribe(d =>{
-      this._router.navigate(['/foods']);
+    this._eventService.updateEvent(updateEvent).subscribe(d =>{
+      this._router.navigate(['/events']);
     });
   }
 

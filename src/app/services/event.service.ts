@@ -23,6 +23,9 @@ export class EventService {
   updateEvent(event:Event){
     return this._http.get(`${ApiUrl}/api/Event`, {headers: this.getHeaders()});
   }
+  deleteEvent(id:number){
+    return this._http.get(`${ApiUrl}/api/Event/${id}`, {headers: this.getHeaders()});
+  }
 
   
   

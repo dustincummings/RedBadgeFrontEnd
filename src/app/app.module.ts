@@ -35,7 +35,11 @@ const routes = [
   {path: 'events', children:[
     {path: '',component: EventIndexComponent},
     {path: 'create',component: EventCreateComponent},
-    {path: 'details/;id',component: EventDetailsComponent}
+    {path: 'details/;id',component: EventDetailsComponent},
+    {path: 'edit/;id',component: EventEditComponent},
+    {path: 'delete/;id',component: EventDeleteComponent}
+    
+
   ]},
 ]
   @NgModule({
