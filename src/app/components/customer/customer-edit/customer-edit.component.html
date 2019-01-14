@@ -1,7 +1,7 @@
 <h1>Edit a Customer</h1>
 <hr>
 
-<div *ngIf="Customer">
+<div *ngIf="customer">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCustomerForm">
     <div>
       <div hidden>
