@@ -21,6 +21,7 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+
 import { EventComponent } from './components/event/event.component';
 import { EventService } from '../app/services/event.service';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
@@ -29,9 +30,27 @@ import { EventDetailsComponent } from './components/event/event-details/event-de
 import { EventEditComponent } from './components/event/event-edit/event-edit.component';
 import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
 
+import { CustomerComponent } from '../app/components/customer/customer.component';
+import { CustomerService } from './services/customer.service';
+import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
+import { CustomerCreateComponent } from './components/customer/customer-create/customer-create.component';
+import { CustomerDetailComponent } from './components/customer/customer-detail/customer-detail.component';
+import { CustomerEditComponent } from './components/customer/customer-edit/customer-edit.component';
+import { CustomerDeleteComponent } from './components/customer/customer-delete/customer-delete.component';
+import { FoodComponent } from './components/food/food.component';
+import { FoodsService } from './services/foods.service';
+import { FoodIndexComponent } from './components/food/food-index/food-index.component';
+import { FoodCreateComponent } from './components/food/food-create/food-create.component';
+import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
+import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
+import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
+import { CommonModule } from '@angular/common';
+
+
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+
   {path: 'events', children:[
     {path: '',component: EventIndexComponent},
     {path: 'create',component: EventCreateComponent},
@@ -41,7 +60,27 @@ const routes = [
     
 
   ]},
+
+  { 
+    path: 'customers', children: [
+      { path:'', component: CustomerIndexComponent },
+      { path:'create', component: CustomerCreateComponent },
+      { path:'detail/:id', component: CustomerDetailComponent },
+      { path:'edit/:id', component: CustomerEditComponent },
+      { path:'delete/:id', component: CustomerDeleteComponent },
+    ]
+  },
+  {path: 'foods', children:[
+    {path: '',component: FoodIndexComponent},
+    {path:'create', component: FoodCreateComponent},
+    {path: 'detail/:id', component: FoodDetailComponent},
+    {path: 'edit/:id', component: FoodEditComponent},
+    {path: 'delete/:id', component: FoodDeleteComponent}
+  ]},
+  { path: '**', component: RegistrationComponent },
+
 ]
+
   @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +88,7 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
+
     EventComponent,
     EventIndexComponent,
     EventCreateComponent,
@@ -56,6 +96,20 @@ const routes = [
     EventEditComponent,
     EventDeleteComponent,
     
+
+    CustomerComponent,
+    CustomerIndexComponent,
+    CustomerCreateComponent,
+    CustomerDetailComponent,
+    CustomerEditComponent,
+    CustomerDeleteComponent,
+    FoodComponent,
+    FoodCreateComponent,
+    FoodDetailComponent,
+    FoodEditComponent,
+    FoodDeleteComponent,
+    FoodIndexComponent
+
   ],
   imports: [
     BrowserModule,
@@ -67,14 +121,17 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
+
     MatInputModule, 
     MatTableModule, 
     MatSortModule
   ],
+  
   providers:[
-    AuthService, 
-   EventService
-    
+    AuthService,
+    CustomerService,
+    FoodsService,
+    EventService
   ],
  
   bootstrap: [AppComponent]
