@@ -28,13 +28,20 @@ import { CustomerIndexComponent } from './components/customer/customer-index/cus
 import { CustomerService } from './services/customer.service';
 import { CustomerComponent } from './components/customer/customer.component';
 import { FoodCreateComponent } from './components/food/food-create/food-create.component';
+import { FoodDetailComponent } from './components/food/food-detail/food-detail.component';
+import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
+import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
+import { CommonModule } from '@angular/common';
 
 const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   {path: 'foods', children:[
     {path: '',component: FoodIndexComponent},
-    {path:'create', component: FoodCreateComponent}
+    {path:'create', component: FoodCreateComponent},
+    {path: 'detail/:id', component: FoodDetailComponent},
+    {path: 'edit/:id', component: FoodEditComponent},
+    {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
   { path: 'customers', component: CustomerIndexComponent },
  
@@ -51,6 +58,9 @@ const routes = [
     CustomerIndexComponent,
     CustomerComponent,
     FoodCreateComponent,
+    FoodDetailComponent,
+    FoodEditComponent,
+    FoodDeleteComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +74,8 @@ const routes = [
     MatFormFieldModule,
     MatInputModule, 
     MatTableModule, 
-    MatSortModule
+    MatSortModule,
+    CommonModule
   ],
   providers:[
     AuthService, 

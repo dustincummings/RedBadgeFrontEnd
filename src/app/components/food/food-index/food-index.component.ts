@@ -13,7 +13,7 @@ export class FoodIndexComponent implements OnInit {
 
   constructor( private _foodService : FoodsService) { }
 
-  columnNames: string[] = [ 'Name',]
+  columnNames: string[] = ['details','Name','buttons']
   
   dataSource: MatTableDataSource<Food>
 

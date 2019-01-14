@@ -1,0 +1,24 @@
+<div *ngIf="food">
+    <div>
+        <label for="">Id #: </label>
+        <span>{{food.foodID}}</span>
+      </div>
+  <div>
+    <label for="">Name: </label>
+    <span>{{food.name}}</span>
+  </div>
+  <div>
+    <label for="">Description: </label>
+    <span>{{food.description}}</span>
+  </div>
+  <div>
+    <label for="">Ingredients: </label>
+    <span>{{food.ingredient}}</span>
+  </div>
+  <div>
+    <label for="">Allergens: </label>
+    <span>{{food.allergen}}</span>
+  </div>
+</div>
+<button mat-button color="warn" (click)="onDelete()">Delete</button>
+<button mat-button color="primary" routerLink="/foods">Back to List</button>
