@@ -1,7 +1,7 @@
 <h1>Create a Note.</h1>
 <hr>
 
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="noteForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="eventForm">
   <div>
     <div>
       <mat-form-field>
@@ -15,13 +15,24 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Food" formControlName="Food" type="Food" required />
+        <input matInput placeholder="FoodId" formControlName="FoodId" type="FoodId" required />
       </mat-form-field>
     </div>
     <mat-form-field>
       <input matInput placeholder="AdditionalNotes" formControlName="AdditionalNotes" type="AdditionalNotes" required />
     </mat-form-field>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="DateTime" formControlName="DateTime" type="DateTime" required />
+      </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+          <input matInput placeholder="CustId" formControlName="CustId" type="CustId" required />
+        </mat-form-field>
+      </div>
   </div>
+
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Event</button>
 </form>
 

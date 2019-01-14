@@ -30,8 +30,10 @@ export class EventEditComponent implements OnInit {
       OwnerID: new FormControl(this.event.OwnerId),
       Location: new FormControl(this.event.Location),
       NumberOfPeople: new FormControl(this.event.NumberOfPeople),
-      Food: new FormControl(this.event.Food),
-      AdditionalNotes: new FormControl(this.event.AdditionalNotes),   
+      FoodId: new FormControl(this.event.FoodId),
+      AdditionalNotes: new FormControl(this.event.AdditionalNotes),
+      DateTime: new FormControl(this.event.DateTime),   
+      CustId: new FormControl(this.event.CustId), 
     });
   }
   onSubmit(form){
@@ -40,8 +42,10 @@ export class EventEditComponent implements OnInit {
       OwnerId: form.value.OwnerID,
       Location: form.value.Location,
       NumberOfPeople: form.value.NumberOfPeople,
-      Food: form.value.Food,
+      FoodId: form.value.FoodId,
       AdditionalNotes: form.value.AdditionalNotes,
+      DateTime: form.value.DateTime,
+      CustId: form.value.CustId,
     };
     this._eventService.updateEvent(updateEvent).subscribe(d =>{
       this._router.navigate(['/events']);

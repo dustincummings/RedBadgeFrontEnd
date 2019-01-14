@@ -3,7 +3,9 @@ export interface Event {
     OwnerId?: number;
     Location: string;
     NumberOfPeople: number;
-    Food:string;
+    FoodId:number;
     AdditionalNotes:string;
+    DateTime?: string;
+    CustId?: number;
   
 }

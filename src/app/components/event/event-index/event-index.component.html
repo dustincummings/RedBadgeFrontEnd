@@ -3,43 +3,32 @@
 <hr>
 
 <div class="event-container mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource" matSort>
-    <tr mat-header-row *matHeaderRowDef="columnNames; sticky:true"></tr>
-    <tr mat-row *matRowDef="let row; columns: columnNames;"></tr>
+    <mat-table  #table [dataSource]="dataSource" matSort>
+        <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+      
+      <ng-container matColumnDef="details">
+        <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let event" routerLink="/events/detail/{{event.eventEntityId}}"><i class="material-icons">library_books</i></mat-cell>
+      </ng-container>
 
-    <ng-container matColumnDef="details">
-      <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let event" routerLink="/events/detail/{{event.EventEntityId}}"><i class="material-icons">library_books</i></mat-cell>
-    </ng-container>
+     <ng-container matColumnDef="EventEntityId">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>ID #</mat-header-cell>
+        <mat-cell *matCellDef="let event">{{event.eventEntityId}}</mat-cell>
+      </ng-container> -->
 
- <!-- <ng-container matColumnDef="eventId">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>ID #</mat-header-cell>
-      <mat-cell *matCellDef="let Event">{{event.eventId}}</mat-cell>
-    </ng-container> -->
-
-    <ng-container matColumnDef="Name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
-      <td mat-cell *matCellDef="let event">{{event.location}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="NumberOfPeople">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>NumberOfPeople</th>
-      <td mat-cell *matCellDef="let event">{{event.numberofpeople}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="Food">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Food</th>
-      <td mat-cell *matCellDef="let event">{{event.food}}</td>
-    </ng-container>
-
-    <ng-container matColumnDef="AdditonalNotes">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>AdditonalNotes</th>
-      <td mat-cell *matCellDef="let event">{{event.additonalnotes}}</td>
-      <button mat-button color="accent" routerLink="/events/edit/{{event.eventId}}">Edit</button>
-          <i class="material-icons" routerLink="/events/delete/{{event.eventId}}">delete</i>
-        </mat-cell>
-    </ng-container>
-
-
-  </table>
-</div>
+      <ng-container matColumnDef="Location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
+        <mat-cell *matCellDef="let event">{{event.location}}</mat-cell>
+      </ng-container>
+      
+      <ng-container matColumnDef="buttons">
+          <mat-header-cell *matHeaderCellDef ></mat-header-cell>
+          <mat-cell *matCellDef="let event">
+            <button mat-button color="accent" routerLink="/events/edit/{{event.eventEntityId}}">Edit</button>
+            <i class="material-icons" routerLink="/event/delete/{{event.eventEntityId}}">delete</i>
+          </mat-cell>
+        </ng-container>
+      
+    </mat-table>
+  </div>
