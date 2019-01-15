@@ -18,7 +18,6 @@ export class EventDetailsComponent implements OnInit {
       this._eventService.getEvent(routeData.get('id')).subscribe((singleEvent:Event) => {
         this.event =singleEvent;
       })
-      console.log(routeData);
     })
   }
 

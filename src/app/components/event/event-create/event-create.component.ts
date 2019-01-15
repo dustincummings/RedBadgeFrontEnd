@@ -23,7 +23,7 @@ export class EventCreateComponent implements OnInit {
       NumberOfPeople: new FormControl,
       FoodID: new FormControl,
       AdditionalNotes: new FormControl,
-      // DateOfEvent: new FormControl,
+      DateOfEvent: new FormControl,
       CustID: new FormControl
     });
   }

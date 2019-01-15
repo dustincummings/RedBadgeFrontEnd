@@ -5,6 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
 
 import { 
   MatToolbarModule, 
@@ -12,7 +16,37 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
-  MatSortModule
+  MatSortModule,
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatTooltipModule,
+  MatTreeModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -86,15 +120,12 @@ const routes = [
     RegistrationComponent,
     AlertComponent,
     LoginComponent,
-
     EventComponent,
     EventIndexComponent,
     EventCreateComponent,
     EventDetailsComponent,
     EventEditComponent,
     EventDeleteComponent,
-    
-
     CustomerComponent,
     CustomerIndexComponent,
     CustomerCreateComponent,
@@ -119,10 +150,48 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-
     MatInputModule, 
     MatTableModule, 
-    MatSortModule
+    MatSortModule,
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    ScrollingModule,
   ],
   
   providers:[
