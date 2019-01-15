@@ -1,31 +1,28 @@
 <div *ngIf="event">
-  <div>
-    <label for="">Id #: </label>
-    <span>{{event.EventEntityId}}</span>
-  </div>
+ 
   <div>
     <label for="">Location: </label>
     <span>{{event.location}}</span>
   </div>
   <div>
-    <label for="">NumberOfPeople: </label>
+    <label for="">Number Of People: </label>
     <span>{{event.numberOfPeople}}</span>
   </div>
   <div>
-    <label for="">FoodId: </label>
-    <span>{{event.foodId}}</span>
+    <label ng="let food of foodData" value="food.ID">Food: </label>
+    <span>{{event.foodID}}</span>
   </div>
   <div>
-    <label for="">AddtionalNotes: </label>
-    <span>{{event.addtionalNotes}}</span>
+    <label for="">Addtional Notes: </label>
+    <span>{{event.additionalNotes}}</span>
   </div>
   <div>
-    <label for="">DateTime: </label>
-    <span>{{event.dateTime}}</span>
+    <label for="">Date of Event: </label>
+    <span>{{event.dateOfEvent}}</span>
   </div>
   <div>
-    <label for="">CustId: </label>
-    <span>{{event.custId}}</span>
+    <label for="">Customer: </label>
+    <span>{{event.custID}}</span>
   </div>
 </div>
 <button mat-button color="warn" (click)="onDelete()">Delete</button>

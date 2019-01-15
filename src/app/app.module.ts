@@ -9,6 +9,11 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+import 'hammerjs';
+import 'web-animations-js';
 
 import { 
   MatToolbarModule, 
@@ -93,6 +98,7 @@ const routes = [
     {path: 'details/:id',component: EventDetailsComponent},
     {path: 'edit/:id',component: EventEditComponent},
     {path: 'delete/:id',component: EventDeleteComponent}
+
   ]},
 
   { 

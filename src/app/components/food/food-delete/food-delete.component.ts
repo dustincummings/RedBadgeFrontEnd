@@ -21,7 +21,6 @@ export class FoodDeleteComponent implements OnInit {
   ngOnInit() {
   }
   onDelete(){
-    console.log(this.food.foodID)
     this._foodService.deleteFood(this.food.foodID).subscribe(()=>{
       this._router.navigate(['/foods']);
     });
