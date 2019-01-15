@@ -1,14 +1,14 @@
 <h1> Edit a Event.</h1>
 <hr>
 <div *ngIf="event">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]=" editEventForm">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editEventForm">
     <div>
       <div hidden>
         <mat-form-field>
           <input matInput placeholder="EventEntityID" formControlName="EventEntityID" type="EventEntityID" required [value]="event.eventEntityID" />
         </mat-form-field>
     </div>
-
+    
     <div hidden>
       <mat-form-field>
         <input matInput placeholder="OwnerID" formControlName="OwnerID" type="OwnerID" required [value]="event.ownerID" />
@@ -17,13 +17,13 @@
     
     <div>
       <mat-form-field>
-        <input matInput placeholder="Location" formControlName="Location" type="Location" required />
+        <input matInput placeholder="Location" formControlName="Location" type="Location" required [value]="event.location" />
       </mat-form-field>
     </div>
     
     <div>
       <mat-form-field>
-        <input matInput placeholder="NumberOfPeople" formControlName="NumberOfPeople" type="NumberOfPeople" required />
+        <input matInput placeholder="NumberOfPeople" formControlName="NumberOfPeople" type="NumberOfPeople" required [value]="event.numberOfPeople" />
       </mat-form-field>
     </div>
     
@@ -36,7 +36,7 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="AdditionalNotes" formControlName="AdditionalNotes" type="AdditionalNotes" required />
+        <input matInput placeholder="AdditionalNotes" formControlName="AdditionalNotes" type="AdditionalNotes" required [value]="event.additionalNotes" />
       </mat-form-field>
     </div>
     <div>
@@ -55,6 +55,7 @@
     </div>
     <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
   </div>
+
 </form>
 </div>
 <a mat-button routerLink="/events">Back to List</a>

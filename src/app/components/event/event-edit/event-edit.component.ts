@@ -68,6 +68,7 @@ export class EventEditComponent implements OnInit {
       foodID: form.value.FoodID,
       additionalNotes: form.value.AdditionalNotes,
       dateOfEvent: form.value.DateOfEvent,
+
       custID: form.value.CustID,
     };
     this._eventService.updateEvent(updateEvent).subscribe(d =>{

@@ -47,6 +47,7 @@ export class EventDeleteComponent implements OnInit {
   
 
   onDelete(){
+
     this._eventService.deleteEvent(this.event.eventEntityID).subscribe(()=>{
       this._router.navigate(['/events']);
     });

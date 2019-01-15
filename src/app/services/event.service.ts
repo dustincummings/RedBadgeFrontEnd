@@ -27,9 +27,6 @@ export class EventService {
     return this._http.delete(`${ApiUrl}/Event/${id}`, {headers: this.getHeaders()});
   }
 
-  
-  
-
   private getHeaders(){
     return new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('id_token')}`);
   }

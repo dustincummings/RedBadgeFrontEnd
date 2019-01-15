@@ -15,7 +15,6 @@ import 'zone.js/dist/zone';
 import 'hammerjs';
 import 'web-animations-js';
 
-
 import { 
   MatToolbarModule, 
   MatButtonModule,
@@ -61,6 +60,7 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { HomepageComponent } from '../app/components/homepage/homepage.component';
 
 import { EventComponent } from './components/event/event.component';
 import { EventService } from '../app/services/event.service';
@@ -88,6 +88,7 @@ import { CommonModule } from '@angular/common';
 
 
 const routes = [
+  { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
 
@@ -97,7 +98,6 @@ const routes = [
     {path: 'details/:id',component: EventDetailsComponent},
     {path: 'edit/:id',component: EventEditComponent},
     {path: 'delete/:id',component: EventDeleteComponent}
-    
 
   ]},
 
@@ -117,7 +117,7 @@ const routes = [
     {path: 'edit/:id', component: FoodEditComponent},
     {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
-  { path: '**', component: RegistrationComponent },
+  { path: '**', component: HomepageComponent },
 
 ]
 
@@ -126,6 +126,7 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
+    HomepageComponent,
     AlertComponent,
     LoginComponent,
     EventComponent,
@@ -145,7 +146,8 @@ const routes = [
     FoodDetailComponent,
     FoodEditComponent,
     FoodDeleteComponent,
-    FoodIndexComponent
+    FoodIndexComponent,
+
 
   ],
   imports: [
@@ -158,7 +160,6 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-
     MatInputModule, 
     MatTableModule, 
     MatSortModule,
@@ -200,7 +201,7 @@ const routes = [
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ScrollingModule
+    ScrollingModule,
   ],
   
   providers:[
