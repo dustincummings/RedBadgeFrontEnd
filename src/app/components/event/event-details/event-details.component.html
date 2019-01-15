@@ -4,7 +4,7 @@
 <div *ngIf="event">
   <div>
     <label for="">EventId : </label>
-    <span>{{event.evententityId}}</span>
+    <span>{{event.eventEntityID}}</span>
   </div>
   <div>
     <label for="">Location: </label>
@@ -12,24 +12,24 @@
   </div>
   <div>
     <label for="">NumberOfPeople: </label>
-    <span>{{event.numberofpeople}}</span>
+    <span>{{event.numberOfPeople}}</span>
   </div>
   <div>
     <label for="">FoodId: </label>
-    <span>{{event.foodId}}</span>
+    <span>{{event.foodID}}</span>
   </div>
   <div>
     <label for="">AdditonalNotes: </label>
-    <span>{{event.additonalnotes}}</span>
+    <span>{{event.additionalNotes}}</span>
   </div>
   <div>
       <label for="">DateTime: </label>
-      <span>{{event.dateTime}}</span>
+      <span>{{event.dateOfEvent}}</span>
     </div>
     <div>
         <label for="">CustId: </label>
-        <span>{{event.custId}}</span>
+        <span>{{event.custID}}</span>
       </div>
 </div>
-<button *ngIf="event" mat-button color="accent" routerLink="/events/edit/{{event.evententityID}}">Edit</button>
+<button *ngIf="event" mat-button color="accent" routerLink="/events/edit/{{event.eventEntityID}}">Edit</button>
 <button mat-button color="primary" routerLink="/events">Back to List</button>
