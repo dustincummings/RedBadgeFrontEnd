@@ -3,7 +3,7 @@
 
 <div *ngIf="event">
   <div>
-    <label for="">EventId : </label>
+    <label for="">Event # : </label>
     <span>{{event.eventEntityID}}</span>
   </div>
   <div>
@@ -11,24 +11,24 @@
     <span>{{event.location}}</span>
   </div>
   <div>
-    <label for="">NumberOfPeople: </label>
+    <label for="">Number Of People: </label>
     <span>{{event.numberOfPeople}}</span>
   </div>
-  <div>
-    <label for="">FoodId: </label>
-    <span>{{event.foodID}}</span>
+  <div *ngIf="foodData">
+    <label for="">Food: </label>
+    <span>{{foodData.name}}</span>
   </div>
   <div>
-    <label for="">AdditonalNotes: </label>
+    <label for="">Additonal Notes: </label>
     <span>{{event.additionalNotes}}</span>
   </div>
   <div>
-      <label for="">DateTime: </label>
+      <label for="">Date Of Event: </label>
       <span>{{event.dateOfEvent}}</span>
     </div>
-    <div>
-        <label for="">CustId: </label>
-        <span>{{event.custID}}</span>
+    <div *ngIf="customerData">
+        <label for="">Customer Name: </label>
+        <span>{{customerData.custLastName}}, {{customerData.custFirstName}}</span>
       </div>
 </div>
 <button *ngIf="event" mat-button color="accent" routerLink="/events/edit/{{event.eventEntityID}}">Edit</button>

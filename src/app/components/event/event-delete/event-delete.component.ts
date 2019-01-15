@@ -44,9 +44,6 @@ export class EventDeleteComponent implements OnInit {
   }
 }
 
-
-
-
 export interface food {
   name: string
   id: number
