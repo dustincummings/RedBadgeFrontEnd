@@ -20,6 +20,7 @@ login(loginInfo) {
   return this._http.post(`${Api_Url}/api/Auth/login`, loginInfo).subscribe( (token: any) => {
     console.log(token);
     localStorage.setItem('id_token',token.token);
+    this._router.navigate(['/home']);
   });
 }
 currentUser(): Observable<Object> {
