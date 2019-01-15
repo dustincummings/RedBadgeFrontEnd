@@ -11,54 +11,48 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./event-delete.component.css']
 })
 export class EventDeleteComponent implements OnInit {
-  event:Event;
-  foodData: food[] = [];
-  customerData: customer[] = [];
+  event: Event;
+  foodData: food;
+  customerData: customer;
 
-  constructor(private _eventService: EventService, private _ar: ActivatedRoute, private _router: Router, private _foodService: FoodsService, private _customerService:CustomerService) {
-    this._ar.paramMap.subscribe(p=> {this._eventService.getEvent(p.get('id')).subscribe((singleEvent:Event)=> 
-    {this.event = singleEvent;
-    });
-  });
-}
-
-  ngOnInit() {
-    this._foodService.getFoods().subscribe((foods: any[]) => {
-      foods.forEach(foodSingle => {
-        var foodFormatted: food = {
-          name: foodSingle.name,
-          id: foodSingle.foodID
-        };
-        this.foodData.push(foodFormatted)
-      });
-      this._customerService.getCustomers().subscribe((customers:any[])=>{
-        customers.forEach(customerSingle =>{
-          var customerFormatted: customer = {
-            custFirstName: customerSingle.custFirstName,
-            custLastName: customerSingle.custLastName,
-            custID: customerSingle.custID
-          };
-          this.customerData.push(customerFormatted)
-        })
-      })
-    })
+  constructor(private _eventService: EventService, private _ar: ActivatedRoute, private _router: Router, private _foodService: FoodsService, private _customerService: CustomerService) {
   }
 
-  
+  ngOnInit() {
+    this._ar.paramMap.subscribe(p => {
+      this._eventService.getEvent(p.get('id')).subscribe((singleEvent: Event) => {
+        this.event = singleEvent;
+        this._foodService.getFood(this.event.foodID.toString()).subscribe((food: any) => {
+          this.foodData = {
+            name: food.name,
+            id: food.id
+          }
+        });
+        this._customerService.getCustomer(this.event.custID.toString()).subscribe((customer: any) => {
+          this.customerData = customer;
+        })
 
-  onDelete(){
+      });
+    });
+  }
 
-    this._eventService.deleteEvent(this.event.eventEntityID).subscribe(()=>{
+  onDelete() {
+
+    this._eventService.deleteEvent(this.event.eventEntityID).subscribe(() => {
       this._router.navigate(['/events']);
     });
   }
 }
-  export interface food {
-    name: string
-    id: number
-  }
-  export interface customer{
-    custFirstName: string
-    custLastName: string
-    custID: number
-  }
+
+
+
+
+export interface food {
+  name: string
+  id: number
+}
+export interface customer {
+  custFirstName: string
+  custLastName: string
+  custID: number
+}
