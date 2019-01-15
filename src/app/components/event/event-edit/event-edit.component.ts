@@ -38,7 +38,7 @@ export class EventEditComponent implements OnInit {
   }
   onSubmit(form){
     const updateEvent: Event ={
-      eventEntityID: form.value.EventEntityId,
+      eventEntityID: form.value.EventEntityID,
       ownerID: form.value.OwnerID,
       location: form.value.Location,
       numberOfPeople: form.value.NumberOfPeople,
