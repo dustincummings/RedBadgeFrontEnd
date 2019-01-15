@@ -1,3 +1,4 @@
+<div class="index-page">
 <h1>Index</h1>
 <a mat-raised-button color="primary" routerLink="/events/create">Create New</a>
 <hr>
@@ -25,10 +26,11 @@
       <ng-container matColumnDef="buttons">
           <mat-header-cell *matHeaderCellDef ></mat-header-cell>
           <mat-cell *matCellDef="let event">
-            <button mat-button color="accent" routerLink="/events/edit/{{event.eventEntityId}}">Edit</button>
+            <button mat-button color="accent" routerLink="/events/edit/{{event.eventEntityID}}">Edit</button>
             <i class="material-icons" routerLink="/events/delete/{{event.eventEntityID}}">delete</i>
           </mat-cell>
         </ng-container>
       
     </mat-table>
   </div>
+</div>

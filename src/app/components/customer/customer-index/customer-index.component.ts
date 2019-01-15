@@ -13,7 +13,7 @@ export class CustomerIndexComponent implements OnInit {
 
   constructor(private _customerService: CustomerService) { }
 
-  columnNames = ['custLastName', 'custFirstName', 'custEmail', 'buttons']
+  columnNames = ['details', 'custLastName', 'custFirstName', 'custEmail', 'buttons']
 
   dataSource: MatTableDataSource<Customer>
 
