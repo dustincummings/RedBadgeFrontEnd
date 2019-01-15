@@ -1,30 +1,27 @@
 <div *ngIf="event">
-  <div>
-    <label for="">Id #: </label>
-    <span>{{event.eventEntityID}}</span>
-  </div>
+ 
   <div>
     <label for="">Location: </label>
     <span>{{event.location}}</span>
   </div>
   <div>
-    <label for="">NumberOfPeople: </label>
+    <label for="">Number Of People: </label>
     <span>{{event.numberOfPeople}}</span>
   </div>
   <div>
-    <label for="">FoodId: </label>
+    <label ng="let food of foodData" value="food.ID">Food: </label>
     <span>{{event.foodID}}</span>
   </div>
   <div>
-    <label for="">AddtionalNotes: </label>
+    <label for="">Addtional Notes: </label>
     <span>{{event.additionalNotes}}</span>
   </div>
   <div>
-    <label for="">DateTime: </label>
+    <label for="">Date of Event: </label>
     <span>{{event.dateOfEvent}}</span>
   </div>
   <div>
-    <label for="">CustId: </label>
+    <label for="">Customer: </label>
     <span>{{event.custID}}</span>
   </div>
 </div>
