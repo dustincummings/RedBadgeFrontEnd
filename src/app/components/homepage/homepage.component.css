@@ -1,0 +1,32 @@
+.bg-image {
+    /*background-image: url("/../../RedBadgeProject/RedBadgeFrontEnd/src/assets/pexels-photo-1712247.jpeg");*/
+    
+    /* Full height */
+    height: 100%; 
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-text {
+    font-weight: bold;
+    /*border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;*/
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+
+h1 {
+    font-size: 6em;
+}
+
+h2 {
+    font-size: 4em;
+}

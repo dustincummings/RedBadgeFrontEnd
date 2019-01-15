@@ -5,6 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+import 'hammerjs';
+import 'web-animations-js';
 
 import { 
   MatToolbarModule, 
@@ -12,7 +21,37 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
-  MatSortModule
+  MatSortModule,
+  MatAutocompleteModule,
+  MatBadgeModule,
+  MatBottomSheetModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatTooltipModule,
+  MatTreeModule,
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -21,6 +60,16 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { HomepageComponent } from '../app/components/homepage/homepage.component';
+
+import { EventComponent } from './components/event/event.component';
+import { EventService } from '../app/services/event.service';
+import { EventIndexComponent } from './components/event/event-index/event-index.component';
+import { EventCreateComponent } from './components/event/event-create/event-create.component';
+import { EventDetailsComponent } from './components/event/event-details/event-details.component';
+import { EventEditComponent } from './components/event/event-edit/event-edit.component';
+import { EventDeleteComponent } from './components/event/event-delete/event-delete.component';
+
 import { CustomerComponent } from '../app/components/customer/customer.component';
 import { CustomerService } from './services/customer.service';
 import { CustomerIndexComponent } from './components/customer/customer-index/customer-index.component';
@@ -37,9 +86,21 @@ import { FoodEditComponent } from './components/food/food-edit/food-edit.compone
 import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
 import { CommonModule } from '@angular/common';
 
+
 const routes = [
+  { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+
+  {path: 'events', children:[
+    {path: '',component: EventIndexComponent},
+    {path: 'create',component: EventCreateComponent},
+    {path: 'details/:id',component: EventDetailsComponent},
+    {path: 'edit/:id',component: EventEditComponent},
+    {path: 'delete/:id',component: EventDeleteComponent}
+
+  ]},
+
   { 
     path: 'customers', children: [
       { path:'', component: CustomerIndexComponent },
@@ -56,7 +117,8 @@ const routes = [
     {path: 'edit/:id', component: FoodEditComponent},
     {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
-  { path: '**', component: RegistrationComponent },
+  { path: '**', component: HomepageComponent },
+
 ]
 
   @NgModule({
@@ -64,8 +126,15 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
+    HomepageComponent,
     AlertComponent,
     LoginComponent,
+    EventComponent,
+    EventIndexComponent,
+    EventCreateComponent,
+    EventDetailsComponent,
+    EventEditComponent,
+    EventDeleteComponent,
     CustomerComponent,
     CustomerIndexComponent,
     CustomerCreateComponent,
@@ -77,7 +146,9 @@ const routes = [
     FoodDetailComponent,
     FoodEditComponent,
     FoodDeleteComponent,
-    FoodIndexComponent
+    FoodIndexComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -89,15 +160,55 @@ const routes = [
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule,
-    MatTableModule,
+    MatInputModule, 
+    MatTableModule, 
     MatSortModule,
-    CommonModule
+    CdkTableModule,
+    CdkTreeModule,
+    DragDropModule,
+    MatAutocompleteModule,
+    MatBadgeModule,
+    MatBottomSheetModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatTreeModule,
+    ScrollingModule,
   ],
+  
   providers:[
     AuthService,
     CustomerService,
-    FoodsService
+    FoodsService,
+    EventService
   ],
  
   bootstrap: [AppComponent]
