@@ -1,3 +1,5 @@
+<div class="detail-page">
+
 <h1>Details</h1>
 <hr>
 
@@ -31,7 +33,6 @@
     <span>{{customer.custCityStZip}}</span>
   </div>
 </div>
-
-<button *ngIf="customer" mat-button color="accent" routerLink="/customers/edit/{{customer.custID}}">Edit</button>
-<button mat-button color="primary" routerLink="/customers">Back to List</button>
-
+<button *ngIf="customer" mat-raised-button class="nav-btn" color="accent" routerLink="/customers/edit/{{customer.custID}}">Edit</button>
+<button mat-raised-button class="nav-btn" color="primary" routerLink="/customers">Back to List</button>
+</div>
