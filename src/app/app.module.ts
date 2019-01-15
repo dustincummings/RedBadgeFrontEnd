@@ -5,6 +5,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
+import {CdkTableModule} from '@angular/cdk/table';
+import {CdkTreeModule} from '@angular/cdk/tree';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+import 'hammerjs';
+import 'web-animations-js';
+
 
 import { 
   MatToolbarModule, 
