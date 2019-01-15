@@ -13,7 +13,7 @@ export class EventIndexComponent implements OnInit {
 
   constructor( private _eventService : EventService) { }
 
-  columnNames = ['details', 'EventEntityId', 'Location','buttons'];
+  columnNames = ['details', 'EventEntityID', 'Location','buttons'];
   
   dataSource: MatTableDataSource<Event>
 
@@ -21,7 +21,6 @@ export class EventIndexComponent implements OnInit {
 
   ngOnInit() {
     this._eventService.getEvents().subscribe((events:Event[])=>{
-      console.log("hello")
       this.dataSource = new MatTableDataSource<Event>(events);
       this.dataSource.sort=this.sort;
       console.log(this.dataSource)
