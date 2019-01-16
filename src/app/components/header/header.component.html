@@ -3,7 +3,7 @@
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="isLoggedIn; else auth">
     <span>Welcome {{username}}</span>
-    <button mat-raised-button class="nav-btn" (click)="onLoggout()">Logout</button>
+    <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </div>
   
   <ng-template #auth>
@@ -13,6 +13,6 @@
     <button mat-raised-button class="nav-btn" routerLink="events">Events</button>
     <button mat-raised-button class="nav-btn" routerLink="register">Register</button>
     <button mat-raised-button class="nav-btn" routerLink="login">Login</button>
-    <button mat-raised-button class="nav-btn" (click)="onLoggout()">Logout</button>
+    <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </ng-template>
 </mat-toolbar>

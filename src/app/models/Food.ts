@@ -1,6 +1,6 @@
 export interface Food{
     foodID?: number;
-    ownerID?: number;
+    ownerID?: string;
     name: string;
     ingredient: string;
     description: string;

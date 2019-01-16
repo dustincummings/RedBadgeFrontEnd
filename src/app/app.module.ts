@@ -57,7 +57,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from '../app/components/registration/registration.component';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { HomepageComponent } from '../app/components/homepage/homepage.component';
@@ -88,7 +88,13 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from './services/auth.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
 
+
+export function getToken():string{
+  return localStorage.getItem('id_token');
+}
 
 const routes = [
   { path: 'home', component: HomepageComponent },
@@ -127,6 +133,7 @@ const routes = [
   @NgModule({
   declarations: [
     AppComponent,
+    
     HeaderComponent,
     RegistrationComponent,
     HomepageComponent,
@@ -150,6 +157,8 @@ const routes = [
     FoodEditComponent,
     FoodDeleteComponent,
     FoodIndexComponent,
+    AdminComponent,
+    AdmincontrolComponent,
 
 
   ],
@@ -205,6 +214,9 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getToken}})
   ],
   
   providers:[
@@ -214,7 +226,8 @@ const routes = [
     CustomerService,
     FoodsService,
     EventService,
-    AlertService
+    AlertService, 
+    JwtHelperService
   ],
  
   bootstrap: [AppComponent]
