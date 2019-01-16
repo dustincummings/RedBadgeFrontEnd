@@ -88,7 +88,12 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from './services/auth.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 
+
+export function getToken():string{
+  return localStorage.getItem('id_token');
+}
 
 const routes = [
   { path: 'home', component: HomepageComponent },
@@ -205,6 +210,9 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getToken}})
   ],
   
   providers:[
@@ -214,7 +222,8 @@ const routes = [
     CustomerService,
     FoodsService,
     EventService,
-    AlertService
+    AlertService, 
+    JwtHelperService
   ],
  
   bootstrap: [AppComponent]
