@@ -23,10 +23,7 @@ export class EventDeleteComponent implements OnInit {
       this._eventService.getEvent(p.get('id')).subscribe((singleEvent: Event) => {
         this.event = singleEvent;
         this._foodService.getFood(this.event.foodID.toString()).subscribe((food: any) => {
-          this.foodData = {
-            name: food.name,
-            id: food.id
-          }
+          this.foodData = food;
         });
         this._customerService.getCustomer(this.event.custID.toString()).subscribe((customer: any) => {
           this.customerData = customer;
