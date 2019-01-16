@@ -12,7 +12,7 @@ export class EventIndexComponent implements OnInit {
 
   constructor( private _eventService : EventService) { }
 
-  columnNames = ['details', 'EventEntityID', 'Location', 'buttons'];
+  columnNames = ['details', 'Location', 'buttons'];
   
   dataSource: MatTableDataSource<Event>
 

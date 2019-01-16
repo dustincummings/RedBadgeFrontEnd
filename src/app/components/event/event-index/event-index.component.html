@@ -11,11 +11,6 @@
         <mat-cell *matCellDef="let event" routerLink="/events/details/{{event.eventEntityID}}"><i class="material-icons">library_books</i></mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="EventEntityID">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>ID #</mat-header-cell>
-        <mat-cell *matCellDef="let event">{{event.eventEntityID}}</mat-cell>
-      </ng-container> -->
-
       <ng-container matColumnDef="Location">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
         <mat-cell *matCellDef="let event">{{event.location}}</mat-cell>
