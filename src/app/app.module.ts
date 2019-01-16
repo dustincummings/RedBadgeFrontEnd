@@ -9,6 +9,11 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+import 'hammerjs';
+import 'web-animations-js';
 
 import { 
   MatToolbarModule, 
@@ -55,6 +60,7 @@ import { RegistrationComponent } from '../app/components/registration/registrati
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
+import { HomepageComponent } from '../app/components/homepage/homepage.component';
 
 import { EventComponent } from './components/event/event.component';
 import { EventService } from '../app/services/event.service';
@@ -85,6 +91,7 @@ import { AlertService } from './services/alert.service';
 
 
 const routes = [
+  { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
 
@@ -94,6 +101,7 @@ const routes = [
     {path: 'details/:id',component: EventDetailsComponent},
     {path: 'edit/:id',component: EventEditComponent},
     {path: 'delete/:id',component: EventDeleteComponent}
+
   ]},
 
   { 
@@ -112,7 +120,7 @@ const routes = [
     {path: 'edit/:id', component: FoodEditComponent},
     {path: 'delete/:id', component: FoodDeleteComponent}
   ]},
-  { path: '**', component: RegistrationComponent },
+  { path: '**', component: HomepageComponent },
 
 ]
 
@@ -121,6 +129,7 @@ const routes = [
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
+    HomepageComponent,
     AlertComponent,
     LoginComponent,
     EventComponent,
@@ -140,7 +149,8 @@ const routes = [
     FoodDetailComponent,
     FoodEditComponent,
     FoodDeleteComponent,
-    FoodIndexComponent
+    FoodIndexComponent,
+
 
   ],
   imports: [
