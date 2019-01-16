@@ -52,7 +52,6 @@ export class EventCreateComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.eventForm.value)
     this._eventService.createEvent(this.eventForm.value).subscribe(data => {
       this._router.navigate(['/events']);
     });

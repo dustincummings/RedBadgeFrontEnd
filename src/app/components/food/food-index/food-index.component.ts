@@ -23,7 +23,6 @@ export class FoodIndexComponent implements OnInit {
     this._foodService.getFoods().subscribe((foods:Food[])=>{
       this.dataSource = new MatTableDataSource<Food>(foods);
       this.dataSource.sort=this.sort;
-      console.log(this.dataSource)
     });
   }
 

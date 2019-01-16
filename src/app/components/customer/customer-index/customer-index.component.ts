@@ -20,7 +20,6 @@ export class CustomerIndexComponent implements OnInit {
   ngOnInit() {
     this._customerService.getCustomers().subscribe((customers: any) => {
       this.dataSource = new MatTableDataSource<Customer>(customers);
-      console.log(this.dataSource)
     })
   }
 }
