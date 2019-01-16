@@ -11,27 +11,28 @@ import { Event } from 'src/app/models/Event'
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  
+
   event: Event;
   foodData: food;
-  customerData:customer;
+  customerData: customer;
 
-  constructor(private _activatedRoute: ActivatedRoute, private _eventService: EventService, private _foodService:FoodsService, private _customerService: CustomerService) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _eventService: EventService, private _foodService: FoodsService, private _customerService: CustomerService) { }
 
   ngOnInit() {
     this._activatedRoute.paramMap.subscribe(routeData => {
-      this._eventService.getEvent(routeData.get('id')).subscribe((singleEvent:Event) => {
-        this.event =singleEvent;
-        this._foodService.getFood(this.event.foodID.toString()).subscribe((food:any) =>{
-          this.foodData=food;
-        })
-      })
-    });
-    this._customerService.getCustomer(this.event.custID.toString()).subscribe((customer: any) => {
-      this.customerData = customer;
-    })
-  }
+      this._eventService.getEvent(routeData.get('id')).subscribe((singleEvent: Event) => {
+        this.event = singleEvent;
+        this._foodService.getFood(this.event.foodID.toString()).subscribe((food: any) => {
+          this.foodData = food;
 
+
+        });
+        this._customerService.getCustomer(this.event.custID.toString()).subscribe((customer: any) => {
+          this.customerData = customer;
+        })
+      });
+    });
+  }
 }
 export interface food {
   name: string
