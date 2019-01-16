@@ -16,14 +16,17 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="FoodID" formControlName="FoodID" type="FoodID" required />
-      </mat-form-field>
+         <mat-select placeholder="Food" formControlName="FoodID" ng-model="event.foodID">
+            <mat-option *ngFor="let food of foodData" [value]="food.id">{{food.name}}</mat-option>
+          </mat-select>
+      </mat-form-field> 
     </div>
     <mat-form-field>
       <input matInput placeholder="AdditionalNotes" formControlName="AdditionalNotes" type="AdditionalNotes" required />
     </mat-form-field>
     <div>
       <mat-form-field>
+
         <input matInput [matDatepicker] ="picker" placeholder="Date Of Event" formControlName="DateOfEvent" type="DateOfEvent" required />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -31,7 +34,9 @@
     </div>
     <div>
         <mat-form-field>
-          <input matInput placeholder="CustID" formControlName="CustID" type="CustID" required />
+         <mat-select placeholder="Customer" formControlName="CustID" ng-model="event.custID">
+          <mat-option *ngFor="let customer of customerData" [value]="customer.custID">{{customer.custLastName}},{{customer.custFirstName}}</mat-option>
+        </mat-select>
         </mat-form-field>
       </div>
   </div>

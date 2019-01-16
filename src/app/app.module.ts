@@ -9,6 +9,11 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import 'core-js/es6/reflect';
+import 'core-js/es7/reflect';
+import 'zone.js/dist/zone';
+import 'hammerjs';
+import 'web-animations-js';
 
 import { 
   MatToolbarModule, 
@@ -80,6 +85,9 @@ import { FoodDetailComponent } from './components/food/food-detail/food-detail.c
 import { FoodEditComponent } from './components/food/food-edit/food-edit.component';
 import { FoodDeleteComponent } from './components/food/food-delete/food-delete.component';
 import { CommonModule } from '@angular/common';
+import { AuthGuard } from './services/auth.guard';
+import { UserService } from './services/user.service';
+import { AlertService } from './services/alert.service';
 
 
 const routes = [
@@ -87,16 +95,17 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
 
-  {path: 'events', children:[
+  {path: 'events', canActivate: [AuthGuard], children:[
     {path: '',component: EventIndexComponent},
     {path: 'create',component: EventCreateComponent},
     {path: 'details/:id',component: EventDetailsComponent},
     {path: 'edit/:id',component: EventEditComponent},
     {path: 'delete/:id',component: EventDeleteComponent}
+
   ]},
 
   { 
-    path: 'customers', children: [
+    path: 'customers', canActivate: [AuthGuard], children: [
       { path:'', component: CustomerIndexComponent },
       { path:'create', component: CustomerCreateComponent },
       { path:'detail/:id', component: CustomerDetailComponent },
@@ -104,7 +113,7 @@ const routes = [
       { path:'delete/:id', component: CustomerDeleteComponent },
     ]
   },
-  {path: 'foods', children:[
+  {path: 'foods', canActivate: [AuthGuard], children:[
     {path: '',component: FoodIndexComponent},
     {path:'create', component: FoodCreateComponent},
     {path: 'detail/:id', component: FoodDetailComponent},
@@ -200,9 +209,12 @@ const routes = [
   
   providers:[
     AuthService,
+    AuthGuard,
+    UserService,
     CustomerService,
     FoodsService,
-    EventService
+    EventService,
+    AlertService
   ],
  
   bootstrap: [AppComponent]

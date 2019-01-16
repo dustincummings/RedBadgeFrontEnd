@@ -1,32 +1,30 @@
 <div class="delete-page">
 <div *ngIf="event">
-  <div>
-    <label for="">Id #: </label>
-    <span>{{event.EventEntityId}}</span>
-  </div>
-  <div>
-    <label for="">Location: </label>
-    <span>{{event.location}}</span>
-  </div>
-  <div>
-    <label for="">NumberOfPeople: </label>
-    <span>{{event.numberOfPeople}}</span>
-  </div>
-  <div>
-    <label for="">FoodId: </label>
-    <span>{{event.foodId}}</span>
-  </div>
-  <div>
-    <label for="">AddtionalNotes: </label>
-    <span>{{event.addtionalNotes}}</span>
-  </div>
-  <div>
-    <label for="">DateTime: </label>
-    <span>{{event.dateTime}}</span>
-  </div>
-  <div>
-    <label for="">CustId: </label>
-    <span>{{event.custId}}</span>
+  <div *ngIf="foodData">
+    <div>
+      <label for="">Location: </label>
+      <span>{{event.location}}</span>
+    </div>
+    <div>
+      <label for="">Number Of People: </label>
+      <span>{{event.numberOfPeople}}</span>
+    </div>
+    <div>
+      <label>Food: </label>
+      <span>{{foodData.name}}</span>
+    </div>
+    <div>
+      <label for="">Addtional Notes: </label>
+      <span>{{event.additionalNotes}}</span>
+    </div>
+    <div>
+      <label for="">Date of Event: </label>
+      <span>{{event.dateOfEvent}}</span>
+    </div>
+    <div *ngIf="customerData">
+      <label for="">Customer: </label>
+      <span>{{customerData.custLastName}},{{customerData.custFirstName}}</span>
+    </div>
   </div>
 </div>
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>

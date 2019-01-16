@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Event } from 'src/app/models/Event';
+import { FoodsService } from 'src/app/services/foods.service';
+import { CustomerService } from 'src/app/services/customer.service';
 
 @Component({
   selector: 'app-event-delete',
@@ -9,23 +11,42 @@ import { Event } from 'src/app/models/Event';
   styleUrls: ['./event-delete.component.css']
 })
 export class EventDeleteComponent implements OnInit {
-  event:Event;
+  event: Event;
+  foodData: food;
+  customerData: customer;
 
-  constructor(private _eventService: EventService, private _ar: ActivatedRoute, private _router: Router) {
-    this._ar.paramMap.subscribe(p=> {this._eventService.getEvent(p.get('id')).subscribe((singleEvent:Event)=> 
-    {this.event = singleEvent;
-    });
-  });
-}
-
-  ngOnInit() {
+  constructor(private _eventService: EventService, private _ar: ActivatedRoute, private _router: Router, private _foodService: FoodsService, private _customerService: CustomerService) {
   }
 
-  onDelete(){
-    console.log(this.event.eventEntityId)
-    this._eventService.deleteEvent(this.event.eventEntityId).subscribe(()=>{
+  ngOnInit() {
+    this._ar.paramMap.subscribe(p => {
+      this._eventService.getEvent(p.get('id')).subscribe((singleEvent: Event) => {
+        this.event = singleEvent;
+        this._foodService.getFood(this.event.foodID.toString()).subscribe((food: any) => {
+          this.foodData = food;
+        });
+        this._customerService.getCustomer(this.event.custID.toString()).subscribe((customer: any) => {
+          this.customerData = customer;
+        })
+
+      });
+    });
+  }
+
+  onDelete() {
+
+    this._eventService.deleteEvent(this.event.eventEntityID).subscribe(() => {
       this._router.navigate(['/events']);
     });
   }
+}
 
+export interface food {
+  name: string
+  id: number
+}
+export interface customer {
+  custFirstName: string
+  custLastName: string
+  custID: number
 }

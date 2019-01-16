@@ -1,5 +1,5 @@
 export interface Event {
-    eventEntityId?: number;
+    eventEntityID?: number;
     ownerID?: number;
     location: string;
     numberOfPeople: number;
