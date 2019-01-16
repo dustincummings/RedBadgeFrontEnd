@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EventService } from '../../../services/event.service';
 import { Event } from '../../../models/Event';
-import { DataSource } from '@angular/cdk/table';
 import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
@@ -13,7 +12,7 @@ export class EventIndexComponent implements OnInit {
 
   constructor( private _eventService : EventService) { }
 
-  columnNames = ['details', 'EventEntityID', 'Location','buttons'];
+  columnNames = ['details', 'EventEntityID', 'Location', 'buttons'];
   
   dataSource: MatTableDataSource<Event>
 
