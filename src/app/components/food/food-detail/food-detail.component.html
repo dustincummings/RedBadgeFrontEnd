@@ -1,3 +1,4 @@
+<div class="detail-page">
 <h1>Details</h1>
 <hr>
 
@@ -23,5 +24,6 @@
     <span>{{food.allergen}}</span>
   </div>
 </div>
-<button *ngIf="food" mat-button color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
-<button mat-button color="primary" routerLink="/foods">Back to List</button>
+<button *ngIf="food" mat-raised-button class="nav-btn" color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
+<button mat-raised-button class="nav-btn" color="primary" routerLink="/foods">Back to List</button>
+</div>
