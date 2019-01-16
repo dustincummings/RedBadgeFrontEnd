@@ -1,3 +1,4 @@
+<div class="edit-page">
 <h1>Edit a Food.</h1>
 <hr>
 
@@ -16,27 +17,28 @@
         </div>
       <div>
         <mat-form-field>
-        <input matInput placeholder="Name" formControlName="Name" type="Name" required [value]="food.name"/>
+        <textarea matInput placeholder="Name" formControlName="Name" type="Name" required [value]="food.name"></textarea>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Description" formControlName="Description" type="Description" required [value]="food.description"/>
+        <textarea matInput placeholder="Description" formControlName="Description" type="text" required [value]="food.description"></textarea>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Ingredient" formControlName="Ingredient" type="Ingredient" required [value]="food.ingredient"/>
+        <textarea matInput placeholder="Ingredient" formControlName="Ingredient" type="Ingredient" required [value]="food.ingredient"></textarea>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Allergen" formControlName="Allergen" type="Allergen" required [value]="food.allergen"/>
+        <textarea matInput placeholder="Allergen" formControlName="Allergen" type="Allergen" required [value]="food.allergen"></textarea>
       </mat-form-field>
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+  <a mat-button class="nav-btn" routerLink="/foods">Back to List</a>
 </form>
 </div>
 
-<a mat-button routerLink="/foods">Back to List</a>
+</div>

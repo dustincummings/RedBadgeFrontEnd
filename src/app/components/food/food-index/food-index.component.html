@@ -1,3 +1,4 @@
+<div class="index-page">
 <h1>Index</h1>
 <a mat-raised-button color="primary" routerLink="/foods/create">Create New</a>
 <hr>
@@ -22,10 +23,11 @@
     <ng-container matColumnDef="buttons">
         <mat-header-cell *matHeaderCellDef ></mat-header-cell>
         <mat-cell *matCellDef="let food">
-          <button mat-button color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
+          <button mat-button color="accent" routerLink="/foods/edit/{{food.foodID}}">edit</button>
           <i class="material-icons" routerLink="/foods/delete/{{food.foodID}}">delete</i>
         </mat-cell>
       </ng-container>
     
   </mat-table>
+</div>
 </div>
