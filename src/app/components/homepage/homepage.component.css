@@ -1,10 +1,8 @@
 .bg-image {
-    /*background-image: url("/../../RedBadgeProject/RedBadgeFrontEnd/src/assets/pexels-photo-1712247.jpeg");*/
-    
-    /* Full height */
+    background: url(../../../assets/pexels-photo-313715.jpeg) no-repeat center center fixed;
     height: 100%; 
-    
-    /* Center and scale the image nicely */
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

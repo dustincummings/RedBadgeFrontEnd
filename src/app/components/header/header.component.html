@@ -5,7 +5,9 @@
     <span>Welcome {{username}}</span>
     <button mat-raised-button class="nav-btn" (click)="onLoggout()">Logout</button>
   </div>
+  
   <ng-template #auth>
+    <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
     <button mat-raised-button class="nav-btn" routerLink="customers">Customers</button>
     <button mat-raised-button class="nav-btn" routerLink="foods">Foods</button>
     <button mat-raised-button class="nav-btn" routerLink="events">Events</button>
