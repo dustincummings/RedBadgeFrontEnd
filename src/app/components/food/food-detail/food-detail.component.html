@@ -1,26 +1,25 @@
 <div class="detail-page">
-<h1>Details</h1>
-<hr>
+  <h1>Details</h1>
+  <hr>
 
-<div *ngIf="food">
-
-  <div>
-    <label for="">Name: </label>
-    <span>{{food.name}}</span>
+  <div *ngIf="food">
+    <div>
+      <label for="">Name: </label>
+      <span>{{food.name}}</span>
+    </div>
+    <div>
+      <label for="">Description: </label>
+      <span>{{food.description}}</span>
+    </div>
+    <div>
+      <label for="">Ingredients: </label>
+      <span>{{food.ingredient}}</span>
+    </div>
+    <div>
+      <label for="">Allergens: </label>
+      <span>{{food.allergen}}</span>
+    </div>
   </div>
-  <div>
-    <label for="">Description: </label>
-    <span>{{food.description}}</span>
-  </div>
-  <div>
-    <label for="">Ingredients: </label>
-    <span>{{food.ingredient}}</span>
-  </div>
-  <div>
-    <label for="">Allergens: </label>
-    <span>{{food.allergen}}</span>
-  </div>
-</div>
-<button *ngIf="food" mat-raised-button class="nav-btn" color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
-<button mat-raised-button class="nav-btn" color="primary" routerLink="/foods">Back to List</button>
+  <button *ngIf="food" mat-raised-button class="nav-btn" color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
+  <button mat-raised-button class="nav-btn" color="primary" routerLink="/foods">Back to List</button>
 </div>

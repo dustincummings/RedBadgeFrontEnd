@@ -92,6 +92,10 @@ import { AdminComponent } from './components/admin/admin.component';
 import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
 
 
+export function getToken():string{
+  return localStorage.getItem('id_token');
+}
+
 const routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
@@ -210,6 +214,9 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: getToken}})
   ],
   
   providers:[
@@ -219,7 +226,8 @@ const routes = [
     CustomerService,
     FoodsService,
     EventService,
-    AlertService
+    AlertService, 
+    JwtHelperService
   ],
  
   bootstrap: [AppComponent]
