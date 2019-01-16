@@ -57,7 +57,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from '../app/components/registration/registration.component';
-import { AuthService } from './services/auth.service';
+import { AuthService } from './auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { HomepageComponent } from '../app/components/homepage/homepage.component';
@@ -88,6 +88,8 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from './services/auth.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
 
 
 const routes = [
@@ -127,6 +129,7 @@ const routes = [
   @NgModule({
   declarations: [
     AppComponent,
+    
     HeaderComponent,
     RegistrationComponent,
     HomepageComponent,
@@ -150,6 +153,8 @@ const routes = [
     FoodEditComponent,
     FoodDeleteComponent,
     FoodIndexComponent,
+    AdminComponent,
+    AdmincontrolComponent,
 
 
   ],

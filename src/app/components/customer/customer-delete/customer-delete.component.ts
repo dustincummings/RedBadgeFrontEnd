@@ -24,7 +24,6 @@ export class CustomerDeleteComponent implements OnInit {
   }
   
   onDelete() {
-    console.log(this.customer.custID)
     this._customerService.deleteCustomer(this.customer.custID).subscribe(() => {
       this._router.navigate(['/customers']);
     });
