@@ -1,0 +1,29 @@
+<div class="container" style="align-content: center"> 
+    <div class="row" style="text-align: center">
+       <div class="col-sm-12"  style="text-align: center" style="align-content: center">
+
+<h1>All Members</h1>
+<div *ngFor="let u of user">
+
+  <mat-card >{{u.username}}     <button style="float: right; width: 24px; text-align: center;"  class="delete" title="delete user"
+    (click)="delete(u.id)">x</button></mat-card> 
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+</div>
+</div>
+<div class="container" style="align-content: center"> 
+<div class="row" style="margin: auto">
+  <div class="col-sm-12" style="align-self: center" style="align-content: center">
+  <h1>All Events</h1>
+<div *ngFor="let t of travall">
+
+  <mat-card >{{t.title}}     <button style="float: right; width: 24px; text-align: center;"  class="delete" title="delete event"
+    (click)="deleteEvent(t.id)">x</button></mat-card> 
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
+ </div>
+ </div> 
+  </div>
+  </div>
