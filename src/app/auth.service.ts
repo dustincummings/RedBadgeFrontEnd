@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { RegisterUser } from '../models/RegisterUser';
+import { RegisterUser } from './models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Token } from '../models/token';
+import { Token } from './models/token';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 

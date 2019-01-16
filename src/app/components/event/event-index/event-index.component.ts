@@ -3,6 +3,7 @@ import { EventService } from '../../../services/event.service';
 import { Event } from '../../../models/Event';
 import { MatTableDataSource, MatSort } from '@angular/material';
 
+
 @Component({
   selector: 'app-event-index',
   templateUrl: './event-index.component.html',
@@ -22,7 +23,9 @@ export class EventIndexComponent implements OnInit {
     this._eventService.getEvents().subscribe((events:Event[])=>{
       this.dataSource = new MatTableDataSource<Event>(events);
       this.dataSource.sort=this.sort;
+      
     });
+
   }
 
 }
