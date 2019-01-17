@@ -19,7 +19,7 @@
           </ng-container>
           <ng-container matColumnDef="dateOfEvent">
               <mat-header-cell *matHeaderCellDef mat-sort-header>Date Of Event</mat-header-cell>
-              <mat-cell *matCellDef="let event">{{event.dateOfEvent}}</mat-cell>
+              <mat-cell *matCellDef="let event">{{event.dateOfEvent | date}}</mat-cell>
             </ng-container>
           
           <ng-container matColumnDef="buttons">

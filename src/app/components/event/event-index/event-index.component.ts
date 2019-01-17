@@ -24,13 +24,9 @@ export class EventIndexComponent implements OnInit {
        this.dataSource.sort=this.sort;}
   }
 
-  
-
   ngOnInit() {
     this._eventService.getEvents().subscribe((events:Event[])=>{
       this.dataSource = new MatTableDataSource<Event>(events);
     });
-
   }
-
 }
