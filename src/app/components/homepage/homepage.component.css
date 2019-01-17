@@ -1,10 +1,10 @@
 .bg-image {
     background: url(../../../assets/pexels-photo-313715.jpeg) no-repeat center center fixed;
-    height: 100%; 
-    padding-top: 5px;
-    padding-bottom: 5px;
+ /* height: 100%;  */
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
   }
 
