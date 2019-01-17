@@ -13,6 +13,10 @@
     color: rgb(2, 0, 7);
 
 }
+.event-container{
+  height: 20em;
+  overflow: auto;
+}
 
 .buttons {
     text-align: right;

@@ -1,18 +1,19 @@
 <div class="index-page">
-  <h1>Index</h1>
+  <h1>Foods</h1>
   <div>
     <a mat-raised-button color="primary" routerLink="/foods/create">Create New</a>
     <hr>
     <div class="food-container mat-elevation-z8">
+        <div *ngIf="dataSource">
       <mat-table #table [dataSource]="dataSource" matSort>
         <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
           <ng-container matColumnDef="details">
-            <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
+            <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
             <mat-cell *matCellDef="let food" routerLink="/foods/detail/{{food.foodID}}"><i class="material-icons">library_books</i></mat-cell>
           </ng-container>
 
-          <ng-container matColumnDef="Name">
+          <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef mat-sort-header>Name</mat-header-cell>
             <mat-cell *matCellDef="let food">{{food.name}}</mat-cell>
           </ng-container>
@@ -24,6 +25,7 @@
             </mat-cell>
           </ng-container>
       </mat-table>
+    </div>
     </div>
   </div>
 </div>

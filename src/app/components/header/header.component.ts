@@ -10,7 +10,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class HeaderComponent implements OnInit {
   username: string;
-  isLoggedIn: boolean;
+  isLogedIn: boolean;
 
   constructor(private _authService: AuthService, private _router: Router, private _jwtHelper: JwtHelperService) { }
 
@@ -26,5 +26,5 @@ export class HeaderComponent implements OnInit {
 }
 export interface UserData {
   user: string;
-  isloggedin: boolean;
+  isLogedIn: boolean;
 }
