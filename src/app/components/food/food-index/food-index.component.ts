@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FoodsService } from '../../../services/foods.service';
 import { Food } from '../../../models/Food';
 import { DataSource } from '@angular/cdk/table';
@@ -13,16 +13,19 @@ export class FoodIndexComponent implements OnInit {
 
   constructor( private _foodService : FoodsService) { }
 
-  columnNames: string[] = ['details','Name','buttons']
+  columnNames: string[] = ['details','name','buttons']
   
   dataSource: MatTableDataSource<Food>
-
-  @ViewChild(MatSort) sort:MatSort;
+  sort;
+  @ViewChild(MatSort) set content(content:ElementRef){
+    this.sort =content;
+    if (this.sort){
+       this.dataSource.sort=this.sort;}
+  }
 
   ngOnInit() {
     this._foodService.getFoods().subscribe((foods:Food[])=>{
       this.dataSource = new MatTableDataSource<Food>(foods);
-      this.dataSource.sort=this.sort;
     });
   }
 

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { CustomerService } from '../../../services/customer.service';
 import { Customer } from '../../../models/Customer';
 import { DataSource } from '@angular/cdk/table';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatSort } from '@angular/material';
 
 @Component({
   selector: 'app-customer-index',
@@ -16,6 +16,12 @@ export class CustomerIndexComponent implements OnInit {
   columnNames = ['details', 'custLastName', 'custFirstName', 'custEmail', 'buttons']
 
   dataSource: MatTableDataSource<Customer>
+  sort;
+  @ViewChild(MatSort) set content(content:ElementRef){
+    this.sort =content;
+    if (this.sort){
+       this.dataSource.sort=this.sort;}
+  }
 
   ngOnInit() {
     this._customerService.getCustomers().subscribe((customers: any) => {

@@ -1,31 +1,39 @@
 <div class="index-page">
-  <h1>Schedule An Event</h1>
-  <a mat-raised-button color="primary" routerLink="/events/create">Create Event</a>
-  <hr>
-
-  <div class="event-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource" matSort>
-
-      <ng-container matColumnDef="details">
-        <mat-header-cell *matHeaderCellDef mat-sort-header class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let event" routerLink="/events/details/{{event.eventEntityID}}"><i class="material-icons">library_books</i></mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="Location">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
-        <mat-cell *matCellDef="let event">{{event.location}}</mat-cell>
-      </ng-container>
-
-      <ng-container matColumnDef="buttons">
-        <mat-header-cell *matHeaderCellDef></mat-header-cell>
-        <mat-cell *matCellDef="let event">
-          <i mat-icon class="material-icons" routerLink="/events/edit/{{event.eventEntityID}}">edit</i>
-          <i class="material-icons" routerLink="/events/delete/{{event.eventEntityID}}">delete</i>
-        </mat-cell>
-      </ng-container>
-
-      <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    </mat-table>
+  <h1> Events</h1>
+  <div>
+    <a mat-raised-button color="primary" routerLink="/events/create">Create Event</a>
+    <hr>
+    
+    <div class="event-container mat-elevation-z8">
+      <div *ngIf="dataSource">
+        <mat-table #table [dataSource]="dataSource" matSort>
+          
+          <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+            <mat-cell *matCellDef="let event" routerLink="/events/details/{{event.eventEntityID}}"><i class="material-icons">library_books</i></mat-cell>
+          </ng-container>
+          
+          <ng-container matColumnDef="location">
+            <mat-header-cell *matHeaderCellDef mat-sort-header>Location</mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.location}}</mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="dateOfEvent">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>Date Of Event</mat-header-cell>
+              <mat-cell *matCellDef="let event">{{event.dateOfEvent | date}}</mat-cell>
+            </ng-container>
+          
+          <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let event">
+              <i mat-icon class="material-icons" routerLink="/events/edit/{{event.eventEntityID}}">edit</i>
+              <i class="material-icons" routerLink="/events/delete/{{event.eventEntityID}}">delete</i>
+            </mat-cell>
+          </ng-container>
+          
+          <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+        </mat-table>
+      </div>
+    </div>
   </div>
 </div>

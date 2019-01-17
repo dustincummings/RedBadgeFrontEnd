@@ -23,8 +23,6 @@ export class LoginComponent implements OnInit {
    });
   }
   onSubmit(){
-    this._authService
-    .login(this._loginForm.value)
-  
+    this._authService.login(this._loginForm.value)  
   }
 }
