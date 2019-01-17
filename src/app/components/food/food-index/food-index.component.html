@@ -4,6 +4,7 @@
     <a mat-raised-button color="primary" routerLink="/foods/create">Create New</a>
     <hr>
     <div class="food-container mat-elevation-z8">
+        <div *ngIf="dataSource">
       <mat-table #table [dataSource]="dataSource" matSort>
         <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
@@ -24,6 +25,7 @@
             </mat-cell>
           </ng-container>
       </mat-table>
+    </div>
     </div>
   </div>
 </div>

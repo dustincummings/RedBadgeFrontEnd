@@ -9,14 +9,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   username: string;
-  isLoggedIn: boolean;
+  isLogedIn: boolean;
 
   constructor(private _authService: AuthService, private _router: Router) { }
 
   ngOnInit() {
     this._authService.userInfo.subscribe((d: UserData) => {
       this.username = d.user;
-      this.isLoggedIn = d.isloggedin;
+      this.isLogedIn = d.isLogedIn;
   });
 }
 
@@ -27,5 +27,5 @@ export class HeaderComponent implements OnInit {
 }
 export interface UserData {
   user: string;
-  isloggedin: boolean;
+  isLogedIn: boolean;
 }
