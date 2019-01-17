@@ -1,8 +1,8 @@
-<div class="delete-page">
+<div id="food">
+    <div class="delete-page">
 
 <h1>Delete a Food Item</h1>
 <h4>Are you sure you want to delete this?</h4>
-<hr>
     
 <div *ngIf="food">
     <div>
@@ -28,4 +28,5 @@
 </div>
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>
 <button mat-raised-button class="nav-btn" color="primary" routerLink="/foods">Back to List</button>
+</div>
 </div>
