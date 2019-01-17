@@ -5,7 +5,7 @@ import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Event } from '../models/Event';
 
-const apiUrl = 'https://localhost:44311'
+const apiUrl = 'https://localhost:44311/api'
 
 
 @Injectable({

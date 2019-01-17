@@ -90,6 +90,7 @@ import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
+import { AboutComponent } from './components/about/about.component';
 
 
 export function getToken():string{
@@ -100,6 +101,7 @@ const routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
 
   {path: 'events', canActivate: [AuthGuard], children:[
     {path: '',component: EventIndexComponent},
@@ -159,6 +161,7 @@ const routes = [
     FoodIndexComponent,
     AdminComponent,
     AdmincontrolComponent,
+    AboutComponent,
 
 
   ],
