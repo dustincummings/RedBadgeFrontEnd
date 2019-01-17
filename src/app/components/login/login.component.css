@@ -3,7 +3,13 @@
     width: 30%;
      background-size: cover;
     margin: 0 auto;
-    padding: 2em;
+    position: absolute;
+    left: 6%;
+    right: 10%;
+    top: 20%;
+    height: 500px;
+    width: 400px;
+    padding: 1em;
     border: 3px solid rgb(39, 3, 87);
     border-radius: 0.4em;
     box-shadow: 2px 4px 20px
