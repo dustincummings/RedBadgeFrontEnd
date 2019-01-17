@@ -214,9 +214,6 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: getToken}})
   ],
   
   providers:[
@@ -227,7 +224,6 @@ const routes = [
     FoodsService,
     EventService,
     AlertService, 
-    JwtHelperService
   ],
  
   bootstrap: [AppComponent]
