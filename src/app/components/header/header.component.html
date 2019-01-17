@@ -2,10 +2,8 @@
   <span>Catering Coordinator</span>
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="isLoggedIn; else auth">
-    <span>Welcome {{username}}</span>
-    <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </div>
-  
+  <span>Welcome {{username}}</span>
   <ng-template #auth>
     <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
     <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>

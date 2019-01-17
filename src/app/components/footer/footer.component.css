@@ -1,0 +1,12 @@
+.text {
+    color: white ;
+    font-size: 10px;
+    margin: 1em;
+}
+
+.footerbackground {
+    background-color: #2B4A6F;
+    position: fixed;
+    bottom: 0px;
+
+}

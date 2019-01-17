@@ -9,6 +9,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
@@ -90,10 +91,15 @@ import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 export function getToken():string{
   return localStorage.getItem('id_token');
+}
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
 }
 
 const routes = [
@@ -159,6 +165,7 @@ const routes = [
     FoodIndexComponent,
     AdminComponent,
     AdmincontrolComponent,
+    FooterComponent,
 
 
   ],
@@ -214,6 +221,11 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
   ],
   
   providers:[
@@ -224,6 +236,7 @@ const routes = [
     FoodsService,
     EventService,
     AlertService, 
+    JwtHelperService
   ],
  
   bootstrap: [AppComponent]
