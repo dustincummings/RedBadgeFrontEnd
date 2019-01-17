@@ -8,9 +8,24 @@
   
   <ng-template #auth>
     <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
-    <button mat-raised-button class="nav-btn" routerLink="customers">Customers</button>
-    <button mat-raised-button class="nav-btn" routerLink="foods">Foods</button>
-    <button mat-raised-button class="nav-btn" routerLink="events">Events</button>
+    <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
+    <mat-menu #tables="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
+      <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
+      <button mat-menu-item [matMenuTriggerFor]="events">Events</button>
+    </mat-menu>
+    <mat-menu #customers="matMenu">
+      <button mat-menu-item routerLink="customers">View All Customers</button>
+        <button mat-menu-item routerLink="customers/create">Create a New Customer</button>
+      </mat-menu>
+      <mat-menu #foods="matMenu">
+          <button mat-menu-item routerLink="foods">View All Foods</button>
+          <button mat-menu-item routerLink="foods/create">Create a New Food</button>
+        </mat-menu>
+        <mat-menu #events="matMenu">
+            <button mat-menu-item routerLink="events">View All Events</button>
+            <button mat-menu-item routerLink="events/create">Create a New Event</button>
+          </mat-menu>
     <button mat-raised-button class="nav-btn" routerLink="register">Register</button>
     <button mat-raised-button class="nav-btn" routerLink="login">Login</button>
     <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
