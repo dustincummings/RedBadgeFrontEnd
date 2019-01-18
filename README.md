@@ -10,6 +10,8 @@ Once you are logged in you will be able to view, create, update or delete items 
 
 While logged in you are only able to view the data that you have entered.
 
+This Repo is just the front end of the application. If you would like to run this locally you will need to also clone 
+
 
 ## Development Team
 
@@ -19,12 +21,12 @@ While logged in you are only able to view the data that you have entered.
 
 ## Frameworks and Libraries Used
 
-.NET Core 2.0
-C# 7
-HTML 5
-CSS 3
-Angular 7
-Angular Material
+* .NET Core 2.0
+* C# 7
+* HTML 5
+* CSS 3
+* Angular 7
+* Angular Material
 
 # Pre-generated Readme Info
 
