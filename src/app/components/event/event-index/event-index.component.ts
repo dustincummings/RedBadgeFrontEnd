@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { EventService } from '../../../services/event.service';
 import { Event } from '../../../models/Event';
-import { MatTableDataSource, MatSort } from '@angular/material';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 
 
 @Component({
@@ -22,6 +22,15 @@ export class EventIndexComponent implements OnInit {
     this.sort =content;
     if (this.sort){
        this.dataSource.sort=this.sort;}
+  }
+  paginator: MatPaginator;
+  @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
+    this.paginator = mp;
+    this.setDataSourceAttributes();
+  }
+  setDataSourceAttributes(){
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnInit() {

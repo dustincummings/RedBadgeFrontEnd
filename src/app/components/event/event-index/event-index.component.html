@@ -33,6 +33,7 @@
           <mat-header-row *matHeaderRowDef="columnNames; sticky:true"></mat-header-row>
           <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
         </mat-table>
+        <mat-paginator [pageSizeOptions]="[5,10]" showFirstLastButtons></mat-paginator>
       </div>
     </div>
   </div>
