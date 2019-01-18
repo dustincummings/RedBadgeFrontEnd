@@ -22,7 +22,7 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 200px;
+    height: 10vh;
     margin-top: -100px; /* half of you height */
     width: 400px;
     margin-left: -200px; /* half of you width */

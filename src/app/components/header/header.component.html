@@ -3,16 +3,19 @@
  
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="isLoggedIn; else auth">
-    <span> Welcome{{user}}</span>
+    <span> Welcome {{user}}</span>
     <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </div>
-  <span> Welcome{{username}}</span>
+  <span> Welcome {{username}}</span>
   <ng-template #auth>
     <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
     <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
+    <button mat-raised-button class="nav-btn" routerLink="about">About</button>
+    <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="accounts">Account</button>
+    
     <mat-menu #tables="matMenu">
-        <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
-        <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
+      <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
+      <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
         <button mat-menu-item [matMenuTriggerFor]="events">Events</button>
       </mat-menu>
     <mat-menu #customers="matMenu">
@@ -26,10 +29,12 @@
         <mat-menu #events="matMenu">
             <button mat-menu-item routerLink="events">View All Events</button>
             <button mat-menu-item routerLink="events/create">Create a New Event</button>
+        </mat-menu>
+        <mat-menu #accounts="matMenu">
+            <button mat-menu-item routerLink="register" *ngIf="!isLoggedIn">Register</button>
+            <button mat-menu-item routerLink="login">Login</button>
+            <button mat-menu-item (click)="onLogout()">Logout</button>
           </mat-menu>
-    <button mat-raised-button class="nav-btn" routerLink="register" *ngIf="!isLogedIn">Register</button>
-    <button mat-raised-button class="nav-btn" routerLink="login">Login</button>
-    <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
-    <button mat-raised-button class="nav-btn" routerLink="about">About</button>
+    
   </ng-template>
 </mat-toolbar>
