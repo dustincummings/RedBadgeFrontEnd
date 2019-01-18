@@ -6,7 +6,7 @@ import { Token } from '../models/Token';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 
-const Api_Url = "https://localhost:44311/api";
+const Api_Url = "https://localhost:44311/";
 
 @Injectable()
 export class AuthService {
@@ -32,6 +32,7 @@ currentUser(): Observable<Object> {
   if (!localStorage.getItem('id_token')) {return new Observable(observer => observer.next(false)); }
   return this._http.get(`${Api_Url}/Account/UserInfo`, {headers: this.setHeader() });
 }
+
 
 logout() {
   localStorage.clear();
