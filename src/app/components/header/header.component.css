@@ -3,6 +3,11 @@
     padding:1;
   }
   
+  .mat-toolbar {
+    color: white;
+    background-color: #083b66;
+  }
+
   .nav-btn {
     margin-right: 0.5em;
     /*background-color: #132584;*/
