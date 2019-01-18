@@ -22,7 +22,7 @@
 }
 #section{
   background: url(../../../assets/Food-Buffet-Catering-Dining-Ea-118711139-1.jpg) no-repeat center center fixed;
-  height: 700px; 
+  height: 850px; 
   padding-top: 5px;
   padding-bottom: 5px;
   background-position: center;
@@ -37,8 +37,6 @@
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-    position: absolute;
-    margin: 5px;
   }
   
   .success {
