@@ -29,6 +29,11 @@
   cursor: pointer;
 }
 
+button {
+  color: white;
+  background-color: #083b66;
+}
+
 .success {
   border-color: rgb(43, 2, 59);
   color: rgb(29, 3, 71);
