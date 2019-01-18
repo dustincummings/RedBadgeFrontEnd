@@ -9,6 +9,7 @@
   }
 
   .bg-text {
+      /* background: url(../../../assets/cc458f8f-1b1f-431a-9f40-752312748672.png)no-repeat center center fixed; */
     font-weight: bold;
     /*border: 3px solid #f1f1f1;
     position: absolute;
@@ -22,10 +23,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 10vh;
-    margin-top: -100px; /* half of you height */
-    width: 400px;
-    margin-left: -200px; /* half of you width */
+    height: 300px;
+    margin-top: -150px; /* half of you height */
+    width: 200px;
+    margin-left: -100px; /* half of you width */
   }
 
 h1 {
