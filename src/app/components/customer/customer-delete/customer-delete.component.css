@@ -1,34 +1,39 @@
-.delete-page {
-
-    background-position: right;
-    width: 30%;
-    margin: 0 auto;
-    padding: 2em;
-    border: 3px solid rgb(39, 3, 87);
-    border-radius: 0.4em;
-    box-shadow: 2px 4px 20px
-    #072aee;
-    text-align: center;
-    font-size: 20px;
-    color: rgb(2, 0, 7);
-
+#customer {
+  background: url(../../../../assets/cupcakes.jpeg);
+  background-size: cover;
+  height: 100vh;
 }
+
+.delete-page {
+  position: absolute;
+  left: 32%;
+  top: 15%;
+  background: rgba(210, 191, 162, 0.75);
+  width: 30%;
+  margin: 0 auto;
+  padding: 2em;
+  border-radius: 0.5em;
+  text-align: center;
+  font-size: 20px;
+  color: rgb(2, 0, 7);
+}
+
 .nav-btn {
-    border: 1.5px solid black;
-    margin: 3px;
-    padding: 3px 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
+  border: 1.5px solid black;
+  margin: 3px;
+  padding: 3px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
   .success {
-    border-color: rgb(43, 2, 59);
-    color: rgb(29, 3, 71);
-  }
+  border-color: rgb(43, 2, 59);
+  color: rgb(29, 3, 71);
+}
 
   .success:hover {
-    background-color: rgb(0, 3, 1);
-    color: white;
-  }
+  background-color: rgb(0, 3, 1);
+  color: white;
+}
 
 

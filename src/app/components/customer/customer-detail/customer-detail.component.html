@@ -1,7 +1,7 @@
+<div id="customer">
 <div class="detail-page">
 
 <h1>Customer Details</h1>
-<hr>
 
 <div *ngIf="customer">
  
@@ -32,4 +32,5 @@
 </div>
 <button *ngIf="customer" mat-raised-button class="nav-btn" color="accent" routerLink="/customers/edit/{{customer.custID}}">Edit</button>
 <button mat-raised-button class="nav-btn" color="primary" routerLink="/customers">Back to List</button>
+</div>
 </div>

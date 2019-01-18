@@ -1,6 +1,6 @@
-<div class="detail-page">
+<div id="food">
+    <div class="detail-page">
   <h1>Details</h1>
-  <hr>
 
   <div *ngIf="food">
     <div>
@@ -22,4 +22,5 @@
   </div>
   <button *ngIf="food" mat-raised-button class="nav-btn" color="accent" routerLink="/foods/edit/{{food.foodID}}">Edit</button>
   <button mat-raised-button class="nav-btn" color="primary" routerLink="/foods">Back to List</button>
+</div>
 </div>
