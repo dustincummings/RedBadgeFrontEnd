@@ -1,7 +1,7 @@
+<div id="customer">
 <div class="edit-page">
 
 <h1>Edit a Customer</h1>
-<hr>
 
 <div *ngIf="customer">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCustomerForm">
@@ -47,6 +47,5 @@
     <a mat-raised-button class="nav-btn" routerLink="/customers">Back to List</a>
   </form>
 </div>
-
-
+</div>
 </div>
