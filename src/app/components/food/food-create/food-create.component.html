@@ -1,6 +1,6 @@
-<div class="create-page">
+<div id="food">
+    <div class="create-page">
 <h1>Create a Food.</h1>
-<hr>
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="foodForm">
   <div>
@@ -26,7 +26,7 @@
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Food</button>
+  <a mat-raised-button class="nav-btn" routerLink="/foods">Back to List</a>
 </form>
-
-<a mat-button routerLink="/foods">Back to List</a>
+</div>
 </div>

@@ -1,7 +1,7 @@
+<div id="customer">
 <div class="edit-page">
 
 <h1>Edit a Customer</h1>
-<hr>
 
 <div *ngIf="customer">
   <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editCustomerForm">
@@ -14,32 +14,32 @@
 
       <div>
         <mat-form-field>
-          <input matInput placeholder="custFirstName" formControlName="custFirstName" type="custFirstName" required [value]="customer.custFirstName" />
+          <input matInput placeholder="First Name" formControlName="custFirstName" type="custFirstName" required [value]="customer.custFirstName" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="custLastName" formControlName="custLastName" type="custLastName" required [value]="customer.custLastName" />
+          <input matInput placeholder="Last Name" formControlName="custLastName" type="custLastName" required [value]="customer.custLastName" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="custEmail" formControlName="custEmail" type="custEmail" required [value]="customer.custEmail" />
+          <input matInput placeholder="Email" formControlName="custEmail" type="custEmail" required [value]="customer.custEmail" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="custPhone" formControlName="custPhone" type="custPhone" required [value]="customer.custPhone" />
+          <input matInput placeholder="Phone" formControlName="custPhone" type="custPhone" required [value]="customer.custPhone" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="custAddress" formControlName="custAddress" type="custAddress" required [value]="customer.custAddress" />
+          <input matInput placeholder="Address" formControlName="custAddress" type="custAddress" required [value]="customer.custAddress" />
         </mat-form-field>
       </div>
       <div>
         <mat-form-field>
-          <input matInput placeholder="custCityStZip" formControlName="custCityStZip" type="custCityStZip" required [value]="customer.custCityStZip" />
+          <input matInput placeholder="City, St Zip" formControlName="custCityStZip" type="custCityStZip" required [value]="customer.custCityStZip" />
         </mat-form-field>
       </div>
     </div>
@@ -47,6 +47,5 @@
     <a mat-raised-button class="nav-btn" routerLink="/customers">Back to List</a>
   </form>
 </div>
-
-
+</div>
 </div>

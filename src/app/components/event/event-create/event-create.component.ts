@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {EventService} from '../../../services/event.service'
 import {FormBuilder, FormGroup, FormControl, FormGroupDirective} from '@angular/forms'
 import {Router} from '@angular/router'
 import { FoodsService } from 'src/app/services/foods.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { MatDatepicker } from '@angular/material';
 
 @Component({
   selector: 'app-event-create',
@@ -15,7 +16,8 @@ export class EventCreateComponent implements OnInit {
   eventForm: FormGroup;
   foodData: food[] = [];
   customerData: customer[] = [];
-
+  @ViewChild(MatDatepicker) datepicker: MatDatepicker<Date>;
+  
   constructor(private _eventService: EventService, private _form: FormBuilder, private _router: Router, private _foodService: FoodsService, private _customerService: CustomerService) { this.createForm();}
 
   ngOnInit() {

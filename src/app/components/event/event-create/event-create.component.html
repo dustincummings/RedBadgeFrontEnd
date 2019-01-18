@@ -1,4 +1,5 @@
-<div class="create-page">
+<div id="event">
+  <div class="create-page">
 <h1>Create an Event!</h1>
 <hr>
 
@@ -11,7 +12,7 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="NumberOfPeople" formControlName="NumberOfPeople" type="NumberOfPeople" required />
+        <input matInput placeholder="Number Of Guest" formControlName="NumberOfPeople" type="NumberOfPeople" required />
       </mat-form-field>
     </div>
     <div>
@@ -22,7 +23,7 @@
       </mat-form-field> 
     </div>
     <mat-form-field>
-      <input matInput placeholder="AdditionalNotes" formControlName="AdditionalNotes" type="AdditionalNotes" required />
+      <input matInput placeholder="Additional Notes" formControlName="AdditionalNotes" type="text" required />
     </mat-form-field>
     <div>
       <mat-form-field>
@@ -44,4 +45,5 @@
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Event</button>
   <a mat-raised-button class="nav-btn" routerLink="/events">Back to List</a>
 </form>
+</div>
 </div>

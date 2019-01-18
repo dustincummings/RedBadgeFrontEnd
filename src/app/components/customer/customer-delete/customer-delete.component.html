@@ -1,14 +1,11 @@
+<div id="customer">
+  <div class="container"></div>
 <div class="delete-page">
 
 <h1>Delete a Customer</h1>
 <h4>Are you sure you want to delete this?</h4>
-<hr>
 
 <div *ngIf="customer">
-  <div>
-    <label for="">Customer ID: </label>
-    <span>{{customer.custID}}</span>
-  </div>
   <div>
     <label for="">First Name: </label>
     <span>{{customer.custFirstName}}</span>
@@ -30,11 +27,12 @@
     <span>{{customer.custAddress}}</span>
   </div>
   <div>
-    <label for="">City St Zip: </label>
+    <label for="">City, St Zip: </label>
     <span>{{customer.custCityStZip}}</span>
   </div>
 </div>
 
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>
 <button mat-raised-button class="nav-btn" routerLink="/customers">Back to List</button>
+</div>
 </div>

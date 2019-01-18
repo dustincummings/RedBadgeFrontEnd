@@ -1,4 +1,5 @@
-<div class="details-page">
+<div id="event">
+  <div class="detail-page">
 <h1>Details</h1>
 <hr>
 
@@ -22,7 +23,7 @@
   </div>
   <div>
     <label for="">Date Of Event: </label>
-    <span>{{event.dateOfEvent}}</span>
+    <span>{{event.dateOfEvent |date}}</span>
   </div>
   <div *ngIf="customerData">
     <label for="">Customer Name: </label>
@@ -33,4 +34,4 @@
 <button *ngIf="event" mat-raised-button class="nav-btn" color="accent" routerLink="/events/edit/{{event.eventEntityID}}">Edit</button>
 <button mat-raised-button class="nav-btn" color="primary" routerLink="/events">Back to List</button>
 </div>
-
+</div>

@@ -1,5 +1,4 @@
 export interface Event {
-    
     id?: number;
     eventEntityID?: number;
     ownerID?: number;
@@ -7,7 +6,7 @@ export interface Event {
     numberOfPeople: number;
     foodID:number;
     additionalNotes:string;
-    dateOfEvent?: Date ;
+    dateOfEvent?: Date;
     custID?: number;
   
 }

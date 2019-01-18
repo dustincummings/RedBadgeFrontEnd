@@ -9,6 +9,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
+import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
@@ -57,7 +58,7 @@ import {
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RegistrationComponent } from '../app/components/registration/registration.component';
-import { AuthService } from './auth.service';
+import { AuthService } from './services/auth.service';
 import { AlertComponent } from './alert/alert.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { HomepageComponent } from '../app/components/homepage/homepage.component';
@@ -91,11 +92,24 @@ import { AlertService } from './services/alert.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
 
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+
+
+
+export function getToken():string{
+  return localStorage.getItem('id_token');
+}
+
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 const routes = [
   { path: 'home', component: HomepageComponent },
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'about', component: AboutComponent },
 
   {path: 'events', canActivate: [AuthGuard], children:[
     {path: '',component: EventIndexComponent},
@@ -155,6 +169,9 @@ const routes = [
     FoodIndexComponent,
     AdminComponent,
     AdmincontrolComponent,
+    AboutComponent,
+    FooterComponent,
+   
 
 
   ],
@@ -210,6 +227,11 @@ const routes = [
     MatTooltipModule,
     MatTreeModule,
     ScrollingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
   ],
   
   providers:[
@@ -219,7 +241,8 @@ const routes = [
     CustomerService,
     FoodsService,
     EventService,
-    AlertService
+    AlertService, 
+    JwtHelperService
   ],
  
   bootstrap: [AppComponent]

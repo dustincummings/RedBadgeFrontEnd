@@ -1,6 +1,6 @@
+<div id="customer">
 <div class="create-page">
 <h1>Add a New Customer</h1>
-<hr>
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="customerForm">
   <div>
@@ -16,12 +16,12 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="custEmail" type="custEmail" required/>
+        <input matInput placeholder="Email" formControlName="custEmail" type="email" required/>
       </mat-form-field>
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="Phone" formControlName="custPhone" type="custPhone" required/>
+        <input matInput placeholder="Phone" formControlName="custPhone" type="tel" pattern="[0-9]{3}-[0-9]-[0-9]{4}" required/>
       </mat-form-field>
     </div>
     <div>
@@ -31,12 +31,12 @@
     </div>
     <div>
       <mat-form-field>
-        <input matInput placeholder="City St Zip" formControlName="custCityStZip" type="custCityStZip" required/>
+        <input matInput placeholder="City, St Zip" formControlName="custCityStZip" type="custCityStZip" required/>
       </mat-form-field>
     </div>
   </div>
   <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Customer</button>
   <a mat-raised-button class="nav-btn" routerLink="/customers">Back to List</a>
 </form>
-
+</div>
 </div>
