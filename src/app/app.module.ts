@@ -96,6 +96,7 @@ import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
+
 export function getToken():string{
   return localStorage.getItem('id_token');
 }
@@ -170,6 +171,7 @@ const routes = [
     AdmincontrolComponent,
     AboutComponent,
     FooterComponent,
+   
 
 
   ],
