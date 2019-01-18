@@ -1,13 +1,11 @@
   .footer {
     position: fixed;
     height: 50px;
-    background-color: #083b66;
+    background-color:rgb(11, 47, 131);
     color:white;
     bottom: 0px;
     left: 0px;
     right: 0px;
     margin-bottom: 0px;
     text-align: center;
-
-
 }

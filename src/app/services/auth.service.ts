@@ -12,8 +12,8 @@ const Api_Url = "https://localhost:44311/";
 export class AuthService {
   
   userInfo:Token;
-  isLoggedIn = new Subject<boolean>();
   username: string;
+  isLoggedIn: any;
   
 constructor(private _http: HttpClient, private _router: Router) { }
 

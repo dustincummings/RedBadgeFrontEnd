@@ -1,40 +1,37 @@
 <mat-toolbar>
   <span>Catering Coordinator</span>
- 
   <span class="example-fill-remaining-space"></span>
-  <div *ngIf="isLoggedIn; else auth">
-    <span> Welcome {{user}}</span>
-    <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
-  </div>
-  <span> Welcome {{username}}</span>
-  <ng-template #auth>
-    <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
-    <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
-    <button mat-raised-button class="nav-btn" routerLink="about">About</button>
-    <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="accounts">Account</button>
-    
-    <mat-menu #tables="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
-      <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
-        <button mat-menu-item [matMenuTriggerFor]="events">Events</button>
-      </mat-menu>
-    <mat-menu #customers="matMenu">
-      <button mat-menu-item routerLink="customers">View All Customers</button>
-        <button mat-menu-item routerLink="customers/create">Create a New Customer</button>
-      </mat-menu>
-      <mat-menu #foods="matMenu">
-          <button mat-menu-item routerLink="foods">View All Foods</button>
-          <button mat-menu-item routerLink="foods/create">Create a New Food</button>
-        </mat-menu>
-        <mat-menu #events="matMenu">
-            <button mat-menu-item routerLink="events">View All Events</button>
-            <button mat-menu-item routerLink="events/create">Create a New Event</button>
-        </mat-menu>
+  <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
+  <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
+  <button mat-raised-button class="nav-btn" routerLink="about">About</button>
+  <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="accounts">Account</button>
+  
+  <mat-menu #tables="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
+    <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
+    <button mat-menu-item [matMenuTriggerFor]="events">Events</button>
+  </mat-menu>
+  <mat-menu #customers="matMenu">
+    <button mat-menu-item routerLink="customers">View All Customers</button>
+    <button mat-menu-item routerLink="customers/create">Create a New Customer</button>
+  </mat-menu>
+  <mat-menu #foods="matMenu">
+    <button mat-menu-item routerLink="foods">View All Foods</button>
+    <button mat-menu-item routerLink="foods/create">Create a New Food</button>
+  </mat-menu>
+  <mat-menu #events="matMenu">
+    <button mat-menu-item routerLink="events">View All Events</button>
+    <button mat-menu-item routerLink="events/create">Create a New Event</button>
+  </mat-menu>
+  
+  <div style="text-align:center;"><span> Welcome {{username}}</span></div>
+  <mat-menu *ngIf="isLoggedIn" #accounts="matMenu">
+    <button mat-menu-item (click)="onLogout()" *ngIf="!isLoggedIn">Logout</button>
+  </mat-menu>
+  
         <mat-menu #accounts="matMenu">
             <button mat-menu-item routerLink="register" *ngIf="!isLoggedIn">Register</button>
-            <button mat-menu-item routerLink="login">Login</button>
-            <button mat-menu-item (click)="onLogout()">Logout</button>
-          </mat-menu>
-    
-  </ng-template>
+            <button mat-menu-item routerLink="login" *ngIf="!isLoggedIn">Login</button>
+            <button mat-menu-item (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+        </mat-menu>
 </mat-toolbar>
