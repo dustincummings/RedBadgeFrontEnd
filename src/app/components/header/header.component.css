@@ -1,5 +1,6 @@
 .example-fill-remaining-space {
     flex: 1 1 auto;
+    padding:1;
   }
   
   .nav-btn {
