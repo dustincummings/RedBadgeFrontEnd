@@ -12,7 +12,7 @@
   background: rgba(210, 191, 162, 0.75); 
   width: 30%;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
   border-radius: 0.5em;
   text-align: center;
   font-size: 20px;
@@ -28,21 +28,21 @@ span {
 }
 
 .nav-btn {
-    border: 1.5px solid black;
-    margin: 3px;
-    padding: 3px 10px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .success {
-    border-color: rgb(43, 2, 59);
-    color: rgb(29, 3, 71);
-  }
+  border: 1.5px solid black;
+  margin: 3px;
+  padding: 3px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-  .success:hover {
-    background-color: rgb(0, 3, 1);
-    color: white;
-  }
+.success {
+  border-color: rgb(43, 2, 59);
+  color: rgb(29, 3, 71);
+}
+
+.success:hover {
+  background-color: rgb(0, 3, 1);
+  color: white;
+}
 
 

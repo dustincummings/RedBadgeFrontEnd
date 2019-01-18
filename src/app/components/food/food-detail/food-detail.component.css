@@ -1,7 +1,7 @@
 #food {
   background: url(../../../../assets/appetizer.jpeg);
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
 }
 
 .detail-page {
@@ -9,10 +9,10 @@
   left: 30%;
   top: 20%;
   background-position: right;
-  background: rgba(175, 176, 172, 0.75);
+  background: rgba(182, 183, 185, 0.75); 
   width: 30%;
   margin: 0 auto;
-  padding: 2em;
+  padding: 0em 2em 2em 2em;
   border-radius: 0.5em;
   text-align: center;
   font-size: 20px;
