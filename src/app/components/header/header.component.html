@@ -1,11 +1,11 @@
 <mat-toolbar color="primary">
   <span>Catering Coordinator</span>
+ 
   <span class="example-fill-remaining-space"></span>
-  <div *ngIf="isLoggedIn; else auth">
-    <span> {{user}}</span>
+  <div *ngIf="isLogedIn; else auth">
+    
     <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
   </div>
-  <span> {{username}}</span>
   <ng-template #auth>
     <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
     <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
@@ -26,7 +26,7 @@
             <button mat-menu-item routerLink="events">View All Events</button>
             <button mat-menu-item routerLink="events/create">Create a New Event</button>
           </mat-menu>
-    <button mat-raised-button class="nav-btn" routerLink="register">Register</button>
+    <button mat-raised-button class="nav-btn" routerLink="register" *ngIf="!isLogedIn">Register</button>
     <button mat-raised-button class="nav-btn" routerLink="login">Login</button>
     <button mat-raised-button class="nav-btn" (click)="onLogout()">Logout</button>
     <button mat-raised-button class="nav-btn" routerLink="about">About</button>

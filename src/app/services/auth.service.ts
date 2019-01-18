@@ -19,9 +19,6 @@ constructor(private _http: HttpClient, private _router: Router) { }
 
 login(loginInfo) {
   return this._http.post(`${Api_Url}/api/Auth/login`, loginInfo).subscribe( (token: any) => {
-    console.log(token);
-    console.log(token.user.userName);
-
     localStorage.setItem('id_token',token.token);
     localStorage.getItem('id_token');
     localStorage.getItem(token.user.userName);
