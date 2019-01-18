@@ -10,7 +10,7 @@ Once you are logged in you will be able to view, create, update or delete items 
 
 While logged in you are only able to view the data that you have entered.
 
-This Repo is just the front end of the application. 
+## *This Repo is just the front end of the application. 
 
 If you would like to run this locally you will need to also clone https://github.com/dustincummings/RedBadgeProject for the back end.
 
