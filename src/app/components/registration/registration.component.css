@@ -22,21 +22,25 @@
 }
 #section{
   background: url(../../../assets/catering-services-buffet.jpg) no-repeat center center fixed;
-  height: 700px; 
+  height: 850px; 
   padding-top: 5px;
   padding-bottom: 5px;
-  background-position: center;
+  background-position: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  
   
 }
 .btn {
     border: 2px solid black;
     background-color: white;
     color: black;
-    padding: 10px 28px;
+    padding: 10px 2px;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    
+
   }
   
   .success {
