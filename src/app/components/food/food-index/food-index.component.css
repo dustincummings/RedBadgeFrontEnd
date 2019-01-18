@@ -25,10 +25,12 @@
 }
 
 a {
+  color: white;
+  background-color: #083b66;
   margin-bottom: 1em;
 }
 
-.ng-container, mat-cell, mat-header-cell {
+.ng-container, mat-cell, mat-header-cell, mat-paginator {
   background: rgba(218, 219, 219, 0.5); 
   }
 

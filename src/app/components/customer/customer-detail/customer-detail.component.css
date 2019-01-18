@@ -19,6 +19,11 @@
   color: rgb(2, 0, 7);
 }
 
+button {
+  color: white;
+  background-color: #083b66;
+}
+
 label {
   text-align: left;
 }

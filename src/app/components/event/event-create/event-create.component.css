@@ -26,6 +26,12 @@
   cursor: pointer;
 }
 
+button {
+  color: white;
+  background-color: #083b66;
+  margin-bottom: 1em;
+}
+
 .success {
   border-color: rgb(43, 2, 59);
   color: rgb(29, 3, 71);
