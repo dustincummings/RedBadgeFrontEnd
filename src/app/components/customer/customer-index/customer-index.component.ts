@@ -15,7 +15,7 @@ export class CustomerIndexComponent implements OnInit {
 
   columnNames = ['details', 'custLastName', 'custFirstName', 'custEmail', 'buttons']
 
-  dataSource: MatTableDataSource<Customer>
+  dataSource: MatTableDataSource<Customer>= new MatTableDataSource([]);
   sort;
   @ViewChild(MatSort) set content(content:ElementRef){
     this.sort =content;

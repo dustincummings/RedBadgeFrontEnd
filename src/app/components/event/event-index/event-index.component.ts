@@ -15,27 +15,27 @@ export class EventIndexComponent implements OnInit {
 
   columnNames = ['details', 'location','dateOfEvent','buttons'];
   
-  dataSource: MatTableDataSource<Event>
+  dataSource: MatTableDataSource<Event> = new MatTableDataSource([]);
 
-  sort;
+   private sort;
   @ViewChild(MatSort) set content(content:ElementRef){
     this.sort =content;
     if (this.sort){
        this.dataSource.sort=this.sort;}
   }
-  paginator: MatPaginator;
+  private paginator: MatPaginator;
   @ViewChild(MatPaginator) set matPaginator(mp: MatPaginator) {
     this.paginator = mp;
     this.setDataSourceAttributes();
   }
-  setDataSourceAttributes(){
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
+  
   ngOnInit() {
     this._eventService.getEvents().subscribe((events:Event[])=>{
       this.dataSource = new MatTableDataSource<Event>(events);
     });
   }
+            setDataSourceAttributes(){
+              this.dataSource.paginator = this.paginator;
+              this.dataSource.sort = this.sort;
+            }
 }

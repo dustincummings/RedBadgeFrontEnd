@@ -15,7 +15,7 @@ export class FoodIndexComponent implements OnInit {
 
   columnNames: string[] = ['details','name','buttons']
   
-  dataSource: MatTableDataSource<Food>
+  dataSource: MatTableDataSource<Food> = new MatTableDataSource([]);
   sort;
   @ViewChild(MatSort) set content(content:ElementRef){
     this.sort =content;
