@@ -1,7 +1,6 @@
 <div id="event">
   <div class="edit-page">
   <h1> Edit an Event</h1>
-  <hr>
   <div *ngIf="event">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editEventForm">
       <div>

@@ -5,23 +5,24 @@
 <h4>Are you sure you want to delete this?</h4>
     
 <div *ngIf="food">
-  <div>
+  <div class="col1">
     <label for="">Name: </label>
-    <span>{{food.name}}</span>
+    <span class="col2">{{food.name}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Description: </label>
-    <span>{{food.description}}</span>
+    <span class="col3">{{food.description}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Ingredients: </label>
-    <span>{{food.ingredient}}</span>
+    <span class="col3">{{food.ingredient}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Allergens: </label>
-    <span>{{food.allergen}}</span>
+    <span class="col5">{{food.allergen}}</span>
   </div>
 </div>
+<br>
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>
 <button mat-raised-button class="nav-btn" routerLink="/foods">Back to List</button>
 </div>

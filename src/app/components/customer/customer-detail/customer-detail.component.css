@@ -7,7 +7,7 @@
 .detail-page {
   position: absolute;
   left: 32%;
-  top: 25%;
+  top: 15%;
   background-position: right;
   background: rgba(210, 191, 162, 0.75); 
   width: 30%;
@@ -24,12 +24,25 @@ button {
   background-color: #083b66;
 }
 
-label {
+.col1 {
+  padding-left: 4em;
   text-align: left;
 }
 
-span {
-  text-align: right;
+.col2 {
+  padding-left: 1em;
+}
+
+.col3 {
+  padding-left: 3.3em;
+}
+
+.col4 {
+  padding-left: 2.9em;
+}
+
+.col5 {
+  padding-left: 2.0em;
 }
 
 .nav-btn {
