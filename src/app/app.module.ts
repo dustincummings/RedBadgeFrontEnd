@@ -90,8 +90,6 @@ import { AuthGuard } from './services/auth.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
 import { AdminComponent } from './components/admin/admin.component';
-import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
-
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -168,7 +166,6 @@ const routes = [
     FoodDeleteComponent,
     FoodIndexComponent,
     AdminComponent,
-    AdmincontrolComponent,
     AboutComponent,
     FooterComponent,
    
