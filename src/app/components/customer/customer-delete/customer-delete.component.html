@@ -6,32 +6,32 @@
 <h4>Are you sure you want to delete this?</h4>
 
 <div *ngIf="customer">
-  <div>
+  <div class="col1">
     <label for="">First Name: </label>
-    <span>{{customer.custFirstName}}</span>
+    <span class="col2">{{customer.custFirstName}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Last Name: </label>
-    <span>{{customer.custLastName}}</span>
+    <span class="col2">{{customer.custLastName}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Email: </label>
-    <span>{{customer.custEmail}}</span>
+    <span class="col3">{{customer.custEmail}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Phone: </label>
-    <span>{{customer.custPhone}}</span>
+    <span class="col4">{{customer.custPhone}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">Address: </label>
-    <span>{{customer.custAddress}}</span>
+    <span class="col5">{{customer.custAddress}}</span>
   </div>
-  <div>
+  <div class="col1">
     <label for="">City, St Zip: </label>
-    <span>{{customer.custCityStZip}}</span>
+    <span class="col2">{{customer.custCityStZip}}</span>
   </div>
 </div>
-
+<br>
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>
 <button mat-raised-button class="nav-btn" routerLink="/customers">Back to List</button>
 </div>

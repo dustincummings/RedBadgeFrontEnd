@@ -31,6 +31,27 @@ button {
   background-color: #083b66;
 }
 
+.col1 {
+  padding-left: 4em;
+  text-align: left;
+}
+
+.col2 {
+  padding-left: 1em;
+}
+
+.col3 {
+  padding-left: 3.3em;
+}
+
+.col4 {
+  padding-left: 2.9em;
+}
+
+.col5 {
+  padding-left: 2.0em;
+}
+
 .success {
   border-color: rgb(43, 2, 59);
   color: rgb(29, 3, 71);
