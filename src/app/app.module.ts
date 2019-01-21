@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormBuilder, FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,7 +9,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {CdkTableModule} from '@angular/cdk/table';
 import {CdkTreeModule} from '@angular/cdk/tree';
-import { JwtHelperService, JwtModule } from '@auth0/angular-jwt'
+import { JwtHelperService, JwtModule, JwtInterceptor } from '@auth0/angular-jwt'
 import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
@@ -92,6 +92,10 @@ import { AlertService } from './services/alert.service';
 import { AdminComponent } from './components/admin/admin.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AdminService } from './services/admin.service';
+import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
+import { AdmincontrolService } from './services/admincontrol.service';
+import { AdminGuard } from './services/admin.guard';
 
 
 
@@ -108,6 +112,7 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'admin', component: AdminComponent },
 
   {path: 'events', canActivate: [AuthGuard], children:[
     {path: '',component: EventIndexComponent},
@@ -168,6 +173,7 @@ const routes = [
     AdminComponent,
     AboutComponent,
     FooterComponent,
+    AdmincontrolComponent,
    
 
 
@@ -233,13 +239,17 @@ const routes = [
   
   providers:[
     AuthService,
+    AdminService,
+    AdminGuard,
     AuthGuard,
     UserService,
     CustomerService,
     FoodsService,
     EventService,
     AlertService, 
-    JwtHelperService
+    JwtHelperService,
+    AdmincontrolService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   ],
  
   bootstrap: [AppComponent]

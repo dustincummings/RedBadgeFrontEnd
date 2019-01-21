@@ -38,6 +38,7 @@ export class AuthService {
     this.isLoggedIn.next(false);
     this._http.post(`${Api_Url}/Account/Logout`, { headers: this.setHeader() });
     this._router.navigate(['/home']);
+
   }
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
