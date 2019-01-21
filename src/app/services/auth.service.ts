@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Token } from '../models/Token';
+import { Token } from '../models/token';
 import { Observable } from 'rxjs';
 import { Subject } from 'rxjs';
 import { APIURL } from '../../environments/environment.prod';

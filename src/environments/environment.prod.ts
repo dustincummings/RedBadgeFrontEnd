@@ -10,3 +10,8 @@ switch (window.location.hostname) {
     // this is the local host name of your API
     APIURL = 'http://localhost:44311';
 }
+
+export const environment = {
+  production: true
+};
+
