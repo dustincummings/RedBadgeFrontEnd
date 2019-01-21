@@ -20,7 +20,7 @@ export class AuthService {
     return this._http.post(`${Api_Url}api/Auth/Register`, regUserData);
   }
   login(loginInfo) {
-    return this._http.post(`${Api_Url}/api/Auth/login`, loginInfo).subscribe((token: any) => {
+    return this._http.post(`${Api_Url}api/Auth/login`, loginInfo).subscribe((token: any) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.access_token);
       this.isLoggedIn.next(true);
