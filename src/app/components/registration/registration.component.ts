@@ -29,8 +29,6 @@ export class RegistrationComponent implements OnInit {
   onSubmit(){
     this._authService
     .register(this._registerForm.value)
-    .subscribe(() => {
-      this._router.navigate(['/login']);
-    });
+    .subscribe(() => this._authService.login(this._registerForm.value));
   }
 }

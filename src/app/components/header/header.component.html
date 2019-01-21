@@ -3,7 +3,6 @@
   <span class="example-fill-remaining-space"></span>
   <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
   <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
-  <button mat-raised-button class="nav-btn" routerLink="about">About</button>
   <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="accounts">Account</button>
   
   <mat-menu #tables="matMenu">
@@ -24,15 +23,16 @@
       <button mat-menu-item routerLink="events/create">Create a New Event</button>
     </mat-menu>
     
-    <div style="text-align:center;"><span> Welcome {{username}}</span></div>
-    <mat-menu *ngIf="isLoggedIn" #accounts="matMenu">
-      <button mat-menu-item (click)="onLogout()" *ngIf="!isLoggedIn">Logout</button>
-    </mat-menu>
+   
     
     <mat-menu #accounts="matMenu">
       <button mat-menu-item routerLink="nav-btn" routerLink="admin"> Admin</button>
-      <button mat-menu-item routerLink="register" *ngIf="!isLoggedIn">Register</button>
-      <button mat-menu-item routerLink="login" *ngIf="!isLoggedIn">Login</button>
-      <button mat-menu-item (click)="onLogout()" *ngIf="isLoggedIn">Logout</button>
+      <div *ngIf="!isLoggedIn">
+        <button mat-menu-item routerLink="register">Register</button>
+        <button mat-menu-item routerLink="login">Login</button>
+      </div>
+      <div *ngIf="isLoggedIn">
+        <button mat-menu-item (click)="onLogout()">Logout</button>
+      </div>
     </mat-menu>
   </mat-toolbar>
