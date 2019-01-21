@@ -7,7 +7,6 @@ import { CustomerIndexComponent } from './components/customer/customer-index/cus
 import { FoodIndexComponent } from './components/food/food-index/food-index.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { EventIndexComponent } from './components/event/event-index/event-index.component';
-import { AdminComponent } from './components/admin/admin.component';
 import { AdmincontrolComponent } from './components/admincontrol/admincontrol.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminGuard } from './services/admin.guard';
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'foods', component: FoodIndexComponent },
   { path: 'events', component: EventIndexComponent, canActivate: [AuthGuard]},
   { path: '**', component: HomepageComponent },
-  { path: 'admin', component: AdminComponent },
   { path:'admincontrol', component: AdmincontrolComponent, data: {title: 'Admin Control'}, canActivate: [AdminGuard]},
 ];
 
