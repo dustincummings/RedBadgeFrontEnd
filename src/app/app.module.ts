@@ -89,7 +89,6 @@ import { CommonModule } from '@angular/common';
 import { AuthGuard } from './services/auth.guard';
 import { UserService } from './services/user.service';
 import { AlertService } from './services/alert.service';
-import { AdminComponent } from './components/admin/admin.component';
 import { AboutComponent } from './components/about/about.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AdminService } from './services/admin.service';
@@ -112,7 +111,8 @@ const routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'admin', component: AdminComponent },
+  { path:'admincontrol', component: AdmincontrolComponent, data: {title: 'Admin Control'}, canActivate: [AdminGuard]},
+
 
   {path: 'events', canActivate: [AuthGuard], children:[
     {path: '',component: EventIndexComponent},
@@ -170,7 +170,6 @@ const routes = [
     FoodEditComponent,
     FoodDeleteComponent,
     FoodIndexComponent,
-    AdminComponent,
     AboutComponent,
     FooterComponent,
     AdmincontrolComponent,

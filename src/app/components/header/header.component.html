@@ -4,7 +4,7 @@
   <button mat-raised-button class="nav-btn" routerLink="home">Home</button>
   <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="tables">Menu</button>
   <button mat-raised-button class="nav-btn" [matMenuTriggerFor]="accounts">Account</button>
-  
+
   <mat-menu #tables="matMenu">
     <button mat-menu-item [matMenuTriggerFor]="customers">Customers</button>
     <button mat-menu-item [matMenuTriggerFor]="foods">Foods</button>
@@ -18,21 +18,18 @@
     <button mat-menu-item routerLink="foods">View All Foods</button>
     <button mat-menu-item routerLink="foods/create">Create a New Food</button>
   </mat-menu>
-    <mat-menu #events="matMenu">
-      <button mat-menu-item routerLink="events">View All Events</button>
-      <button mat-menu-item routerLink="events/create">Create a New Event</button>
-    </mat-menu>
-    
-   
-    
-    <mat-menu #accounts="matMenu">
-      <button mat-menu-item routerLink="nav-btn" routerLink="admin"> Admin</button>
-      <div *ngIf="!isLoggedIn">
-        <button mat-menu-item routerLink="register">Register</button>
-        <button mat-menu-item routerLink="login">Login</button>
-      </div>
-      <div *ngIf="isLoggedIn">
-        <button mat-menu-item (click)="onLogout()">Logout</button>
-      </div>
-    </mat-menu>
-  </mat-toolbar>
+  <mat-menu #events="matMenu">
+    <button mat-menu-item routerLink="events">View All Events</button>
+    <button mat-menu-item routerLink="events/create">Create a New Event</button>
+  </mat-menu>
+
+  <mat-menu #accounts="matMenu">
+    <div *ngIf="!isLoggedIn">
+      <button mat-menu-item routerLink="register">Register</button>
+      <button mat-menu-item routerLink="login">Login</button>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <button mat-menu-item (click)="onLogout()">Logout</button>
+    </div>
+  </mat-menu>
+</mat-toolbar>

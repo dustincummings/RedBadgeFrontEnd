@@ -22,6 +22,7 @@
 .food-container{
   height: 20em;
   overflow: auto;
+  background: rgba(218, 219, 219, 0.5);
 }
 
 a {

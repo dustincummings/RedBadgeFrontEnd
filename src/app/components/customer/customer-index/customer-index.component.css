@@ -22,7 +22,7 @@
 .customer-container{
   height: 20em;
   overflow: auto;
-  /* background: rgba(246, 230, 204, 0.5);  */
+  background: rgba(246, 230, 204, 0.5); 
 }
 
 .ng-container, mat-cell, mat-header-cell, mat-paginator {
