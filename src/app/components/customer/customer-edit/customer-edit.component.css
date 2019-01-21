@@ -1,7 +1,7 @@
 #customer {
   background: url(../../../../assets/cupcakes.jpeg);
   background-size: cover;
-  height: 100vh;
+  height: 90vh;
 }
 
 .edit-page {
@@ -27,6 +27,11 @@
   padding: 3px 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+button {
+  color: white;
+  background-color: #083b66;
 }
 
 .success {

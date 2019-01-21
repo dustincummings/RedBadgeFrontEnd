@@ -4,8 +4,7 @@ import { AdminService } from '../../services/admin.service'
 import { AdmincontrolService } from '../../services/admincontrol.service'
 import { AlertService } from '../../services/alert.service';
 import { User } from '../../models/user';
-import {Event} from '../../models/Event';
-
+import { Event } from '../../models/Event';
 @Component({
   selector: 'app-admincontrol',
   templateUrl: './admincontrol.component.html',
@@ -35,6 +34,7 @@ export class AdmincontrolComponent implements OnInit {
     this.user = [];
     this.admincontrolService.getAll(this.user.id)
       .subscribe((data: any) => {
+        console.log(data);
         this.user = data;
       },
         error => {
@@ -48,6 +48,7 @@ export class AdmincontrolComponent implements OnInit {
     this.event = [];
     this.admincontrolService.getAllevent(this.event.id)
       .subscribe((data: any) => {
+        console.log(data);
         this.event = data;
       },
         error => {
@@ -62,6 +63,7 @@ export class AdmincontrolComponent implements OnInit {
       res => {
         this.getAll();
       }, (err) => {
+        console.log(err);
       }
     );
   }
@@ -72,6 +74,7 @@ export class AdmincontrolComponent implements OnInit {
       res => {
         this.getAllevent();
       }, (err) => {
+        console.log(err);
       }
     );
   }

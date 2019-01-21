@@ -1,7 +1,6 @@
 <div id="event">
   <div class="create-page">
 <h1>Create an Event!</h1>
-<hr>
 
 <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="eventForm">
   <div>
@@ -42,7 +41,7 @@
       </div>
   </div>
 
-  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Event</button>
+  <button mat-raised-button class="nav-btn" type="submit">Create Event</button>
   <a mat-raised-button class="nav-btn" routerLink="/events">Back to List</a>
 </form>
 </div>

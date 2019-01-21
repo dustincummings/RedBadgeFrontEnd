@@ -1,5 +1,4 @@
 export interface Event {
-    id?: number;
     eventEntityID?: number;
     ownerID?: number;
     location: string;

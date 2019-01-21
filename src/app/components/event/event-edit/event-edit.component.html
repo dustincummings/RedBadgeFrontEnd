@@ -1,7 +1,6 @@
 <div id="event">
   <div class="edit-page">
   <h1> Edit an Event</h1>
-  <hr>
   <div *ngIf="event">
     <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editEventForm">
       <div>
@@ -61,7 +60,7 @@
         </div>
       </div>
 
-      <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
+      <button mat-raised-button class="nav-btn" type="submit">Save</button>
       <a mat-raised-button class="nav-btn" routerLink="/events">Back to List</a>
 
     </form>

@@ -10,17 +10,17 @@ export class AdminService {
     constructor(private http: HttpClient) { }
 
     login(username: string, password: string) {
-        return this.http.post<any>(apiUrl + '/admin/login', { username, password} )
+        return this.http.post<any>(apiUrl + '/Admin/Login', { username, password} )
             .pipe(map(user => {
                 if (user && user.sessionToken) {
-                    sessionStorage.setItem('currentAdmin', JSON.stringify(user));
+                    localStorage.setItem('currentAdmin', JSON.stringify(user));
                 }
                 return user;
             }));
     }
 
     logout() {
-        sessionStorage.clear();
+        localStorage.clear();
     }
 
 }

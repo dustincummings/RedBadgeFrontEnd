@@ -1,13 +1,22 @@
-  .footer {
-    position: fixed;
-    height: 50px;
-    background-color: black;
-    color:white;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    margin-bottom: 0px;
-    text-align: center;
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: none;
+  text-align: center;
+  background-color: #000;
+}
 
+#logo {
+  width: 6%;
+  height: 6%;
+  position: relative;
+}
 
+a {
+  color: #083b66;
+}
+p, a span {
+  color: #083b66;
 }

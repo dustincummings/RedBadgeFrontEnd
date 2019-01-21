@@ -1,6 +1,8 @@
 # Catering Coordinator App
 
+
 ## Walkthrough of Our Site
+
 
 This app was created for individuals that would like to keep track of events that they have catered or are planning to cater.
 
@@ -9,6 +11,7 @@ When you first arrive to the website you will be on the homepage. You will only 
 Once you are logged in you will be able to view, create, update or delete items in 3 different tables(Food, Customer, Event).
 
 While logged in you are only able to view the data that you have entered.
+
 
 ## *This Repo is just the front end of the application. 
 
@@ -22,6 +25,7 @@ If you would like to run the front end locally but have a deployed backend then 
 * **Dustin Cummings** - (https://github.com/dustincummings)
 * **Marquise Grayson** - (https://github.com/marquise1005)
 * **Stephanie Mizelle** - (https://github.com/samizelle)
+
 
 ## Frameworks and Libraries Used
 

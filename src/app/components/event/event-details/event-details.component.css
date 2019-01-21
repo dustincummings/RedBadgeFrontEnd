@@ -7,7 +7,7 @@
 .detail-page {
   position: absolute;
   left: 30%;
-  top: 10%;
+  top: 15%;
   background: rgba(246, 230, 204, 0.5); 
   background-position: right;
   width: 30%;
@@ -25,6 +25,38 @@
   padding: 3px 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+button {
+  color: white;
+  background-color: #083b66;
+  margin-bottom: 1em;
+}
+
+
+.col1 {
+  padding-left: 1em;
+  text-align: left;
+}
+
+.col2 {
+  padding-left: 5.1em;
+}
+
+.col3 {
+  padding-left: 0.9em;
+}
+
+.col4 {
+  padding-left: 6.8em;
+}
+
+.col5 {
+  padding-left: 1.9em;
+}
+
+.col6 {
+  padding-left: 3.1em;
 }
 
 .success {

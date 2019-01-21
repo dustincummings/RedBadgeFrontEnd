@@ -6,33 +6,34 @@
       
 <div *ngIf="event">
   <div *ngIf="foodData">
-    <div>
+    <div class="col1">
       <label for="">Location: </label>
-      <span>{{event.location}}</span>
+      <span class="col2">{{event.location}}</span>
     </div>
-    <div>
+    <div class="col1">
       <label for="">Number Of People: </label>
-      <span>{{event.numberOfPeople}}</span>
+      <span class="col3">{{event.numberOfPeople}}</span>
     </div>
-    <div>
+    <div class="col1">
       <label>Food: </label>
-      <span>{{foodData.name}}</span>
+      <span class="col4">{{foodData.name}}</span>
     </div>
-    <div>
+    <div class="col1">
       <label for="">Addtional Notes: </label>
-      <span>{{event.additionalNotes}}</span>
+      <span class="col5">{{event.additionalNotes}}</span>
     </div>
-    <div>
+    <div class="col1">
       <label for="">Date of Event: </label>
-      <span>{{event.dateOfEvent | date}}</span>
+      <span class="col6">{{event.dateOfEvent | date}}</span>
     </div>
-    <div *ngIf="customerData">
-      <label for="">Customer: </label>
-      <span>{{customerData.custLastName}},{{customerData.custFirstName}}</span>
+    <div class="col1" *ngIf="customerData">
+      <label for="">Customer Name: </label>
+      <span class="col5">{{customerData.custLastName}},{{customerData.custFirstName}}</span>
     </div>
   </div>
 </div>
+<br>
 <button mat-raised-button class="nav-btn" color="warn" (click)="onDelete()">Delete</button>
-<button mat-raised-button class="nav-btn" color="primary" routerLink="/events">Back to List</button>
+<button mat-raised-button class="nav-btn" routerLink="/events">Back to List</button>
 </div>
 </div>

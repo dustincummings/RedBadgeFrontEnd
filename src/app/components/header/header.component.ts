@@ -10,16 +10,20 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class HeaderComponent implements OnInit {
   username: string;
-  isLogedIn: boolean;
+  isLoggedIn: boolean;
 
-  constructor(private _authService: AuthService, private _router: Router, private _jwtHelper: JwtHelperService) { }
+  constructor(private _authService: AuthService, private _router: Router, ) {}
+  
 
   ngOnInit() {
-    this.username = this._jwtHelper.decodeToken(localStorage.getItem('id_token')).unique_name
+    this._authService.isLoggedIn.subscribe((loggedInUserStatus: boolean) =>{
+    this.isLoggedIn = loggedInUserStatus;
+    });
 }
 
   onLogout() {
     this._authService.logout();
+    this.isLoggedIn =false;
     this._router.navigate(['/login']);
   }
 
