@@ -10,7 +10,6 @@ export class CustomerService {
   constructor(private _http: HttpClient) { }
 
   getCustomers() {
-    console.log("almost")
     return this._http.get(`${ApiUrl}/Customer`, { headers: this.getHeaders() });
   }
 
@@ -19,7 +18,6 @@ export class CustomerService {
   }
 
   createCustomer(customer: Customer) {
-    console.log("not yet")
     return this._http.post(`${ApiUrl}/Customer`, customer, { headers: this.getHeaders() });
   }
 
