@@ -24,7 +24,7 @@ export class AuthService {
       this.userInfo = token;
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
-      this._router.navigate(['/home']);
+      this._router.navigate(['/admincontrol']);
     });
   }
   currentUser(): Observable<Object> {
