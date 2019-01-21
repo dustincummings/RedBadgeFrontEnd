@@ -1,6 +1,8 @@
 # Catering Coordinator App
 
-##Walkthrough of Our Site
+
+## Walkthrough of Our Site
+
 
 This app was created for individuals that would like to keep track of events that they have catered or are planning to cater.
 
@@ -11,22 +13,30 @@ Once you are logged in you will be able to view, create, update or delete items 
 While logged in you are only able to view the data that you have entered.
 
 
-##Development Team
+## *This Repo is just the front end of the application. 
+
+If you would like to run this locally you will need to also clone https://github.com/dustincummings/RedBadgeProject for the back end.
+
+If you would like to run the front end locally but have a deployed backend then you would need to change the APIURL in the services to 
+
+
+## Development Team
 
 * **Dustin Cummings** - (https://github.com/dustincummings)
 * **Marquise Grayson** - (https://github.com/marquise1005)
 * **Stephanie Mizelle** - (https://github.com/samizelle)
 
-##Frameworks and Libraries Used
 
-.NET Core 2.0
-C# 7
-HTML 5
-CSS 3
-Angular 7
-Angular Material
+## Frameworks and Libraries Used
 
-#Pre-generated Readme Info
+* .NET Core 2.0
+* C# 7
+* HTML 5
+* CSS 3
+* Angular 7
+* Angular Material
+
+# Pre-generated Readme Info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.4.
 

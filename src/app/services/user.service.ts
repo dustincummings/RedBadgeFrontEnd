@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
 import { User } from '../models/user';
+import { APIURL } from '../../environments/environment.prod';
 
-const apiUrl = ''
+// const apiUrl = ''
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
@@ -18,7 +18,7 @@ export class UserService {
     }
 
     signup(user: User) {
-        return this.http.post(apiUrl + '/user/signup', user);
+        return this.http.post(APIURL + '/user/signup', user);
     }
 
     update(user: User) {
