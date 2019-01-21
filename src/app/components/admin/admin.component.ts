@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AlertService} from '../../services/alert.service'
 import { AdminService } from '../../services/admin.service'
-
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
