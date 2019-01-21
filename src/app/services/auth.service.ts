@@ -22,7 +22,7 @@ export class AuthService {
   login(loginInfo) {
     return this._http.post(`${Api_Url}api/Auth/login`, loginInfo).subscribe((token: any) => {
       this.userInfo = token;
-      localStorage.setItem('id_token', token.access_token);
+      localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
       this._router.navigate(['/home']);
     });
