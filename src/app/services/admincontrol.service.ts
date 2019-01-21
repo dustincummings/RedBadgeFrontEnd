@@ -4,7 +4,7 @@ import { User } from '../models/user';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Admin } from '../models/Admin';
-import { Event } from '../models/event';
+import { Event } from '../models/Event';
 import { APIURL } from '../../environments/environment.prod';
 
 // const apiUrl = 'https://localhost:44311'
