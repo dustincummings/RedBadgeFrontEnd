@@ -4,7 +4,7 @@ import { AdminService } from '../../services/admin.service'
 import { AdmincontrolService } from '../../services/admincontrol.service'
 import { AlertService } from '../../services/alert.service';
 import { User } from '../../models/user';
-import { Event } from '../../models/Event';
+import { Event } from '../../models/event';
 @Component({
   selector: 'app-admincontrol',
   templateUrl: './admincontrol.component.html',
