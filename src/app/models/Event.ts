@@ -1,4 +1,4 @@
-export interface event {
+export interface Event {
     eventEntityID?: number;
     ownerID?: number;
     location: string;
