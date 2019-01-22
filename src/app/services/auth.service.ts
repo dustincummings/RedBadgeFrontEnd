@@ -18,10 +18,10 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this._http.post(`${APIURL}api/Auth/Register`, regUserData);
+    return this._http.post(`${APIURL}/Auth/Register`, regUserData);
   }
   login(loginInfo) {
-    return this._http.post(`${APIURL}api/Auth/login`, loginInfo).subscribe((token: any) => {
+    return this._http.post(`${APIURL}/Auth/login`, loginInfo).subscribe((token: any) => {
       this.userInfo = token;
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
