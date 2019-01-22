@@ -9,9 +9,9 @@ switch (window.location.hostname) {
   default:
     // this is the local host name of your API
     APIURL = 'https://cateringcoordinator.azurewebsites.net/api';
-}
+
+  }
 
 export const environment = {
   production: true
 };
-

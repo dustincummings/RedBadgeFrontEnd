@@ -11,25 +11,23 @@ export class CustomerService {
   constructor(private _http: HttpClient) { }
 
   getCustomers() {
-    console.log("almost")
-    return this._http.get(`${APIURL}/Customer`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}api/Customer`, { headers: this.getHeaders() });
   }
 
   getCustomer(id: string) {
-    return this._http.get(`${APIURL}/Customer/${id}`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}api/Customer/${id}`, { headers: this.getHeaders() });
   }
 
   createCustomer(customer: Customer) {
-    console.log("not yet")
-    return this._http.post(`${APIURL}/Customer`, customer, { headers: this.getHeaders() });
+    return this._http.post(`${APIURL}api/Customer`, customer, { headers: this.getHeaders() });
   }
 
   updateCustomer(customer: Customer) {
-    return this._http.put(`${APIURL}/Customer`, customer, { headers: this.getHeaders() });
+    return this._http.put(`${APIURL}api/Customer`, customer, { headers: this.getHeaders() });
   }
 
   deleteCustomer(id: number) {
-    return this._http.delete(`${APIURL}/Customer/${id}`, { headers: this.getHeaders() });
+    return this._http.delete(`${APIURL}api/Customer/${id}`, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
